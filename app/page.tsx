@@ -6,12 +6,12 @@ import MainComponent from "@/components/wrapper/MainComponent/MainComponent";
 import ErrorBoundary from "@/components/wrapper/ErrorBoundary/ErrorBoundary";
 import WebGLWrapper from "@/components/wrapper/WebGLWrapper/WebGLWrapper";
 import { CoverDemo } from "@/app/sections/intro";
-import Footer from "@/components/ui/Footer/Footer";
-import ScrollDown from "@/components/ui/ScrollDown/ScrollDown";
+// import ScrollDown from "@/components/ui/ScrollDown/ScrollDown";
 import withThemeRerender from "@/components/hoc/withThemeRerender";
-import { SCROLL_DOWN_LOAD_DELAY } from "@/utils/timing";
+// import { SCROLL_DOWN_LOAD_DELAY } from "@/utils/timing";
+import {Showcase} from "@/app/sections/cards"
 import  HeroParallaxDemo  from "@/app/sections/Hero";
-
+import {WorldMapDemo} from "@/app/sections/footer";
 // Only render the DisplacementSphere component on the client side
 const DisplacementSphere = dynamic(() => import("@/components/ui/DisplacementSphere/DisplacementSphere"), {
   ssr: false,
@@ -31,11 +31,12 @@ const Home = () => (
         <div className="relative flex justify-end items-center h-screen">
           <CoverDemo />
         </div>
-        <ScrollDown mountDelay={SCROLL_DOWN_LOAD_DELAY} href="#about" />
-        <HeroParallaxDemo />
-        <Footer />
+        {/* <ScrollDown mountDelay={SCROLL_DOWN_LOAD_DELAY} href="#about" /> */}
+       <HeroParallaxDemo />
+       <Showcase />
+      <WorldMapDemo/>
       </MainComponent>
-    </GridBackgroudLayout>
+      </GridBackgroudLayout>
   </Fragment>
 );
 
