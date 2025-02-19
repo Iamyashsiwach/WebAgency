@@ -1,0 +1,16 @@
+.text::after {
+  content: "_";
+  visibility: hidden;
+  display: none;
+}
+
+.glyph {
+  font-family: var(--font-tiro-devanagari-hindi);
+  opacity: 0.4;
+  line-height: 0;
+  letter-spacing: 1px;
+}
+
+.value {
+  opacity: 1;
+}

@@ -1,0 +1,44 @@
+.wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.subText {
+  opacity: 0.8;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: hsl(248, 19%, 71%);
+  margin-bottom: 1rem;
+}
+
+.headText {
+  font-weight: 900;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.subText {
+  /* font-size: 18px; */
+  font-size: 16px;
+}
+
+.headText {
+  /* font-size: 50px; */
+  font-size: 45px;
+}
+
+@media (max-width: 640px) {
+  .subText {
+    font-size: 14px;
+  }
+
+  .headText {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 450px) {
+  .headText {
+    font-size: 30px;
+  }
+}
