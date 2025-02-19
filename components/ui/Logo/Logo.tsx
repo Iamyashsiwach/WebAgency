@@ -20,7 +20,7 @@ const handleScrollReset = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent
 }
 
 const Logo = ({ width = 36, height = 36, transitionDuration = LOGO_LOAD_DURATION, startDelay = LOGO_LOAD_DELAY, href = '/' }: LogoProps) => (
-  <Link aria-label='Portfolio Icon' href={href} onClick={handleScrollReset}>
+  <Link aria-label='agency Icon' href={href} onClick={handleScrollReset}>
     <motion.svg
       className="text-foreground hover:text-foreground_secondary transition-colors duration-300"
       width={width}

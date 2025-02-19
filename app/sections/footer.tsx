@@ -51,7 +51,7 @@ export function WorldMapDemo() {
   <p className="mb-1">Copyright © {new Date().getFullYear()} All rights reserved</p>
   <p>
     Made with ❤️ by{" "}
-    <StyledLink aria-label="Yash Siwach - Portfolio" external href="https://yashsiwach.space">
+    <StyledLink aria-label="Yash Siwach - agency" external href="https://yashsiwach.space">
       Yash Siwach
     </StyledLink>
   </p>

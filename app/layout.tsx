@@ -15,59 +15,71 @@ import NavIcons from "@/components/ui/NavIcons/NavIcons";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yashsiwach.space/"),
+  metadataBase: new URL("https://webagency-alpha.vercel.app"),
 
   title: {
-    template: "%s | Portfolio",
-    default: "Yash Siwach",
+    template: "%s | Agency",
+    default: "Agency - Web Development, SEO & Digital Solutions",
   },
   authors: {
     name: "Yash Siwach",
   },
-  description: longDescription,
+  description: "Your trusted partner in web development, UI/UX design, SEO, and digital marketing.",
   openGraph: {
-    title: "Yash Siwach | Portfolio",
+    title: "Yash Siwach | Agency",
     description: longDescription,
-    url: "https://www.amanarya.com/",
-    siteName: "Aman Arya | Portfolio",
-    images: "https://www.amanarya.com/icon.png",
+    url: "https:/yashsiwach.space",
+    siteName: "Yash Siwach | Agency",
+    images: "https://webagency-alpha.vercel.app/icon.png",
     type: "website",
   },
   twitter: {
-    title: "Aman Arya | Portfolio",
+    title: "Yash Siwach | Agency",
     description: longDescription,
-    images: "https://www.amanarya.com/icon.png",
+    images: "https://webagency-alpha.vercel.app/icon.png",
   },
-  keywords: ["Aman Arya", "Portfolio", "Aman Arya Portfolio", "Aman Arya | Portfolio", "Aman", "Aman's Portfolio", "Aman Portfolio", "aman", "aman portfolio", "aman's portfolio"],
-  manifest: "https://www.amanarya.com/manifest.json",
+  keywords: [
+    "Yash Siwaxh",
+    "Web Development",
+    "UI/UX Design",
+    "E-commerce Solutions",
+    "SEO",
+    "Content Marketing",
+    "PPC Advertising",
+    "Social Media Marketing",
+    "Branding",
+    "Custom Web Apps",
+    "Digital Solutions",
+  ],
+  manifest: "https://webagency-alpha.vercel.app/manifest.json",
   icons: [
     {
-      "url": "https://www.amanarya.com/icon-16x16.png",
+      "url": "https://webagency-alpha.vercel.app/icon-16x16.png",
       "sizes": "16x16",
       "type": "image/png"
     },
     {
-      "url": "https://www.amanarya.com/icon-32x32.png",
+      "url": "https://webagency-alpha.vercel.app/icon-32x32.png",
       "sizes": "32x32",
       "type": "image/png"
     },
     {
-      "url": "https://www.amanarya.com/icon-512x512.png",
+      "url": "https://webagency-alpha.vercel.app/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "url": "https://www.amanarya.com/icon-1024x1024.png",
+      "url": "https://webagency-alpha.vercel.app/icon-1024x1024.png",
       "sizes": "1024x1024",
       "type": "image/png"
     },
     {
-      "url": "https://www.amanarya.com/icon.png",
+      "url": "https://webagency-alpha.vercel.app/icon.png",
       "sizes": "234x203",
       "type": "image/png"
     },
     {
-      "url": "https://www.amanarya.com/maskable_icon.png",
+      "url": "https://webagency-alpha.vercel.app/maskable_icon.png",
       "sizes": "1024x1024",
       "type": "image/png"
     }

@@ -1,67 +1,112 @@
-# Portfolio Website - Aman Arya
+# 🚀 [ Agency ] - Web Development, SEO & Digital Solutions
 
-Welcome to my portfolio website built with Nextjs:14, Typescript, Tailwind, Framer-Motion, Three.js, and hosted on Vercel with a custom domain [amanarya.com](https://www.amanarya.com)
+Welcome to **[ Agency ]**, your trusted partner in **web development, UI/UX design, SEO, and digital marketing**. We specialize in crafting modern, high-performing websites and applications that drive business success and improve search engine rankings.
 
-![Portfolio Screenshot Wide](public/preview-wide-dark.png)
+---
 
-## Overview
+## 🔹 About Us
+At **[ Agency ]**, we believe in creating digital experiences that captivate, convert, and inspire. Whether you're a startup, small business, or enterprise, we tailor our solutions to meet your unique needs and enhance your online visibility.
 
-This project showcases my portfolio and allows visitors to view my work and send me messages directly through the website.
+---
 
-## Live Demo
+## 🌟 Services We Offer
 
-You can see the live demo of this project at [https://www.amanarya.com](https://www.amanarya.com)
+✅ **Web Development** – Responsive, scalable, and fast websites built with modern technologies.  
+✅ **UI/UX Design** – Intuitive and user-friendly interfaces that enhance customer engagement.  
+✅ **E-commerce Solutions** – Secure and high-performing online stores.  
+✅ **SEO (Search Engine Optimization)** – Advanced strategies to improve your Google ranking.  
+✅ **Content Marketing** – High-quality content to attract and retain customers.  
+✅ **Pay-Per-Click (PPC) Advertising** – Targeted campaigns for higher conversions.  
+✅ **Social Media Marketing** – Boost brand awareness and engagement on platforms like Facebook, Instagram, and LinkedIn.  
+✅ **Branding & Graphic Design** – Elevating your brand with creative visuals.  
+✅ **Custom Web Apps** – Tailor-made solutions for your business needs.  
 
-## Installation
+---
 
-To run this project locally, follow these steps:
+## 🚀 Technologies We Use
+
+We leverage the latest technologies to build robust and scalable web solutions:
+
+- **Frontend:** React, Next.js, Vue.js, Tailwind CSS  
+- **Backend:** Node.js, Express.js, Laravel, Django  
+- **CMS & E-commerce:** WordPress, Shopify, Webflow  
+- **SEO & Analytics:** Google Analytics, Ahrefs, SEMrush, Moz  
+- **Databases:** MongoDB, PostgreSQL, Firebase  
+- **Cloud & DevOps:** AWS, Vercel, Docker  
+
+---
+
+## 📂 Project Structure
+```
+your-project/
+│
+├── app/
+│   ├── sections/
+│   │   ├── cards.tsx
+│   │   ├── footer.tsx
+│   │   ├── Hero.tsx
+│   │   ├── intro.tsx
+│   │   ├── cta.tsx
+│   │   └── ... (other section files)
+│   ├── page.tsx
+│   └── layout.tsx
+│
+├── components/
+│   ├── ui/
+│   │   ├── Navbar/
+│   │   │   └── Navbar.tsx
+│   │   ├── DisplacementSphere/
+│   │   │   └── DisplacementSphere.tsx
+│   │   ├── focus-cards.tsx
+│   │   ├── hero-parallax.tsx
+│   │   ├── sparkles.tsx
+│   │   ├── text-generate-effect.tsx
+│   │   ├── cover.tsx
+│   │   ├── wobble-card.tsx
+│   │   └── ... (other UI components)
+│   └── wrapper/
+│       ├── GridBackgroudLayout/
+│       │   └── GridBackgroudLayout.tsx
+│       ├── MainComponent/
+│       │   └── MainComponent.tsx
+│       └── ErrorBoundary/
+│           └── ErrorBoundary.tsx
+│
+├── styles/
+│   ├── globals.css
+│   └── components/
+│       └── Error/
+│           └── styles.module.css
+│
+├── next.config.js
+├── tailwind.config.ts
+└── README.md
+```
+
+---
+
+## 🔧 How to Get Started
 
 1. Clone the repository:
-
    ```bash
-   git clone https://github.com/Am4nn/Portfolio-Next-Website.git
+   git clone https://github.com/iamyashsiwach/webagency.git
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
    ```
 
-2. Navigate to the project directory:
+---
 
-    ```bash
-    cd Portfolio-Next-Website
-    ```
+## 📩 Get in Touch
+📧 Email: [iamyashsiwach@gmail.com](mailto:iamyashsiwach@gmail.com)  
+🌍 Website: [yashsiwach.space](https://yashsiwach.space)  
+📱 WhatsApp: [+91 7206099609](https://wa.me/917206099609)  
+🔗 LinkedIn: [yash-siwach](https://linkedin.com/in/yash-siwach)  
+🔗 X: [@iamyashsiwach](https://x.com/iamyashsiwach)  
 
-3. Install the dependencies:
-
-    ```bash
-    npm install
-    ```
-
-4. Start the React app:
-
-    ```bash
-    npm run dev
-    ```
-
-5. Open your web browser and visit <http://localhost:3000/> to view the project locally.
-
-## Features
-
-- Next.js 14: Enhances the portfolio with server-side rendering and static site generation, ensuring optimal performance and user experience.
-
-- TypeScript: Improves code quality and maintainability by adding static typing to JavaScript, catching errors early in the development process.
-
-- Framer Motion: Adds smooth and visually appealing animations to the portfolio, enhancing the user interface and overall presentation.
-
-- Tailwind CSS: Simplifies styling and ensures a consistent design across the portfolio with its utility-first approach to CSS.
-
-- Three.js: Three.js is used for 3D graphics rendering, adding a visually appealing aspect to the portfolio
-
-- Serverless API: The website uses a serverless function hosted on Vercel to handle form submissions and send emails using Nodemailer
-
-- Custom Domain: The portfolio is hosted on a custom domain [www.amanarya.com](https://www.amanarya.com)
-
-## Contact
-
-If you have any questions, feedback, or would like to get in touch with me, you can use the contact form on my portfolio or email me at <125aryaaman@gmail.com>
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+Let's build something amazing together! 🚀
