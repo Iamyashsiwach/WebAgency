@@ -105,8 +105,5 @@ your-project/
 ## 📩 Get in Touch
 📧 Email: [iamyashsiwach@gmail.com](mailto:iamyashsiwach@gmail.com)  
 🌍 Website: [yashsiwach.space](https://yashsiwach.space)  
-📱 WhatsApp: [+91 7206099609](https://wa.me/917206099609)  
-🔗 LinkedIn: [yash-siwach](https://linkedin.com/in/yash-siwach)  
-🔗 X: [@iamyashsiwach](https://x.com/iamyashsiwach)  
 
 Let's build something amazing together! 🚀
