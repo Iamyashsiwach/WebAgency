@@ -186,3 +186,27 @@
     color: #000000;
   }
 }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: auto; 
+}
+
+.container {
+  height: 100vh; /* Full height */
+  overflow: auto; /* Allow scrolling within this container */
+}
+
+.fixed-element {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Ensure it covers the viewport */
+  overflow: hidden; /* Prevents scrolling */
+}
+.full-screen {
+  height: 100vh; /* Full height of the viewport */
+  overflow: hidden; /* Prevents scrolling */
+}
