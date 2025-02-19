@@ -24,10 +24,11 @@ export function WorldMapDemo() {
             ))}
           </span>
         </p>
-        <p className="text-sm md:text-lg text-neutral-500 max-w-2xl mx-auto py-4">
-          Break free from traditional boundaries. Work from anywhere, at the
-          comfort of your own studio apartment. Perfect for Nomads and
-          Travellers.
+      <p className="text-sm md:text-lg text-neutral-500 max-w-2xl mx-auto py-4">
+        "We don’t just market brands—we help them grow! Through smart strategies, 
+        creative storytelling, and real results, we turn ideas into success. 
+        Across industries and continents, we help brands break boundaries and thrive worldwide. 
+        Let’s build something great together.”
         </p>
       </div>
 
