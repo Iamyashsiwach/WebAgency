@@ -41,6 +41,7 @@
     "@storybook/test": "^8.5.7",
     "@types/react": "^18",
     "@types/three": "^0.163.0",
+    "autoprefixer": "^10.4.20",
     "eslint": "^8",
     "eslint-config-next": "14.1.4",
     "eslint-plugin-storybook": "^0.11.3",
