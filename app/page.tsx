@@ -13,7 +13,7 @@ import {Showcase} from "@/app/sections/cards"
 import  HeroParallaxDemo  from "@/app/sections/Hero";
 import {WorldMapDemo} from "@/app/sections/footer";
 import { Analytics } from "@vercel/analytics/react"
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 // Only render the DisplacementSphere component on the client side
 const DisplacementSphere = dynamic(() => import("@/components/ui/DisplacementSphere/DisplacementSphere"), {
   ssr: false,
@@ -40,6 +40,7 @@ const Home = () => (
       </MainComponent>
       </GridBackgroudLayout>
 <Analytics/>
+<SpeedInsights />
   </Fragment>
 );
 
