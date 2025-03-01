@@ -5,5 +5,11 @@ const nextConfig = {
   },
   // other configurations...
 };
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
 
+module.exports = withBundleAnalyzer({
+  // Your Next.js config
+});
 module.exports = nextConfig; 

@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React, { Fragment } from "react";
 import dynamic from 'next/dynamic';
 import GridBackgroudLayout from "@/components/wrapper/GridBackgroudLayout/GridBackgroudLayout";
