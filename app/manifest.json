@@ -58,35 +58,5 @@
       "sizes": "1024x1024",
       "type": "image/png"
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#141414",
-  "background_color": "#141414",
-  "screenshots": [
-    {
-      "src": "/preview-wide-dark.png",
-      "type": "image/png",
-      "sizes": "1908x903",
-      "form_factor": "wide"
-    },
-    {
-      "src": "/preview-narrow-dark.png",
-      "type": "image/png",
-      "sizes": "803x1600",
-      "form_factor": "narrow"
-    },
-    {
-      "src": "/preview-wide-light.png",
-      "type": "image/png",
-      "sizes": "1912x907",
-      "form_factor": "wide"
-    },
-    {
-      "src": "/preview-narrow-light.png",
-      "type": "image/png",
-      "sizes": "803x1600",
-      "form_factor": "narrow"
-    }
   ]
 }

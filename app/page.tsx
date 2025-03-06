@@ -11,7 +11,7 @@ import withThemeRerender from "@/components/hoc/withThemeRerender";
 // import { SCROLL_DOWN_LOAD_DELAY } from "@/utils/timing";
 import {Showcase} from "@/app/sections/cards"
 import  HeroParallaxDemo  from "@/app/sections/Hero";
-import {WorldMapDemo} from "@/app/sections/footer";
+import {Footer} from "@/app/sections/footer";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 // Only render the DisplacementSphere component on the client side
@@ -36,7 +36,7 @@ const Home = () => (
         {/* <ScrollDown mountDelay={SCROLL_DOWN_LOAD_DELAY} href="#about" /> */}
        <HeroParallaxDemo />
        <Showcase />
-      <WorldMapDemo/>
+      <Footer/>
       </MainComponent>
       </GridBackgroudLayout>
 <Analytics/>
