@@ -131,11 +131,11 @@ export const GroqIcon = ({ size = 16 }) => {
       viewBox="0 0 160 59"
       width={size * (160 / 120)}
       className="pt-1"
-      style={{ color: 'currentcolor' }}
+      style={{ color: "currentcolor" }}
     >
       <mask
         id="mask0_4345_1846"
-        style={{ maskType: 'luminance' }}
+        style={{ maskType: "luminance" }}
         maskUnits="userSpaceOnUse"
         x="0"
         y="0"

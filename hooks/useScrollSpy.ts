@@ -28,4 +28,4 @@ export function useScrollSpy(sections: string[], offset: number = 0) {
   }, [refreshActiveNavLink]);
 
   return [currentSection, refreshActiveNavLink];
-};
+}

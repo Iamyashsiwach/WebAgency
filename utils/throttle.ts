@@ -16,7 +16,7 @@
  */
 export function throttle<T extends (...args: any[]) => void>(
   func: T,
-  timeFrame: number
+  timeFrame: number,
 ): (...args: Parameters<T>) => void {
   let lastTime = 0;
 

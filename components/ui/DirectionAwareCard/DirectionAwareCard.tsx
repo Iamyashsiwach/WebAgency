@@ -20,9 +20,13 @@ export const DirectionAwareCard = ({
 }) => {
   const ref = useRef<HTMLDivElement>(null);
 
-  const [direction, setDirection] = useState<"top" | "bottom" | "left" | "right">("left");
+  const [direction, setDirection] = useState<
+    "top" | "bottom" | "left" | "right"
+  >("left");
 
-  const handleMouseEnter = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  const handleMouseEnter = (
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
+  ) => {
     if (!ref.current) return;
 
     const direction = getDirection(event, ref.current);
@@ -48,7 +52,7 @@ export const DirectionAwareCard = ({
 
   const getDirection = (
     ev: React.MouseEvent<HTMLDivElement, MouseEvent>,
-    obj: HTMLElement
+    obj: HTMLElement,
   ) => {
     const { width: w, height: h, left, top } = obj.getBoundingClientRect();
     const x = ev.clientX - left - (w / 2) * (w > h ? h / w : 1);
@@ -63,7 +67,7 @@ export const DirectionAwareCard = ({
       ref={ref}
       className={cn(
         "md:h-96 w-60 h-60 md:w-96 bg-transparent rounded-lg overflow-hidden group/card relative",
-        className
+        className,
       )}
     >
       <AnimatePresence mode="wait">
@@ -86,7 +90,7 @@ export const DirectionAwareCard = ({
               alt="image"
               className={cn(
                 "h-full w-full object-cover scale-[1.15]",
-                imageClassName
+                imageClassName,
               )}
               width="1000"
               height="1000"
@@ -101,7 +105,7 @@ export const DirectionAwareCard = ({
             }}
             className={cn(
               "text-white absolute bottom-4 left-4 z-40",
-              childrenClassName
+              childrenClassName,
             )}
           >
             {children}

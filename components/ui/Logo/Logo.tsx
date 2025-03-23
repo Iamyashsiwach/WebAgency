@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { LOGO_LOAD_DELAY, LOGO_LOAD_DURATION } from '@/utils/timing';
+import React from "react";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { LOGO_LOAD_DELAY, LOGO_LOAD_DURATION } from "@/utils/timing";
 
 interface LogoProps {
   width?: number | string;
@@ -13,14 +13,22 @@ interface LogoProps {
   href?: string;
 }
 
-const handleScrollReset = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-  // event.preventDefault(); 
-   window.scrollTo(0, 0);
-  window.location.hash = '';
-}
+const handleScrollReset = (
+  event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+) => {
+  // event.preventDefault();
+  window.scrollTo(0, 0);
+  window.location.hash = "";
+};
 
-const Logo = ({ width = 36, height = 36, transitionDuration = LOGO_LOAD_DURATION, startDelay = LOGO_LOAD_DELAY, href = '/' }: LogoProps) => (
-  <Link aria-label='agency Icon' href={href} onClick={handleScrollReset}>
+const Logo = ({
+  width = 36,
+  height = 36,
+  transitionDuration = LOGO_LOAD_DURATION,
+  startDelay = LOGO_LOAD_DELAY,
+  href = "/",
+}: LogoProps) => (
+  <Link aria-label="agency Icon" href={href} onClick={handleScrollReset}>
     <motion.svg
       className="text-foreground hover:text-foreground_secondary transition-colors duration-300"
       width={width}
@@ -30,12 +38,20 @@ const Logo = ({ width = 36, height = 36, transitionDuration = LOGO_LOAD_DURATION
       viewBox="0.00 0.00 234.00 203.00"
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
-      transition={{ duration: transitionDuration, ease: "easeInOut", delay: startDelay }}
+      transition={{
+        duration: transitionDuration,
+        ease: "easeInOut",
+        delay: startDelay,
+      }}
     >
       <motion.path
-        initial={{ translateX: '-20px', translateY: 0 }}
+        initial={{ translateX: "-20px", translateY: 0 }}
         animate={{ translateX: 0, translateY: 0 }}
-        transition={{ duration: transitionDuration, ease: "easeInOut", delay: transitionDuration + startDelay - 0.1 }}
+        transition={{
+          duration: transitionDuration,
+          ease: "easeInOut",
+          delay: transitionDuration + startDelay - 0.1,
+        }}
         fill="currentColor"
         d="M 122.18 182.11
          C 133.68 182.63 146.17 181.54 139.07 165.45
@@ -53,9 +69,13 @@ const Logo = ({ width = 36, height = 36, transitionDuration = LOGO_LOAD_DURATION
          Z"
       />
       <motion.path
-        initial={{ translateX: '67px', translateY: '-62px', scale: 0.75 }}
+        initial={{ translateX: "67px", translateY: "-62px", scale: 0.75 }}
         animate={{ translateX: 0, translateY: 0, scale: 1 }}
-        transition={{ duration: transitionDuration, ease: "easeInOut", delay: transitionDuration + startDelay - 0.1 }}
+        transition={{
+          duration: transitionDuration,
+          ease: "easeInOut",
+          delay: transitionDuration + startDelay - 0.1,
+        }}
         fill="currentColor"
         d="M 69.88 181.12
          C 71.53 181.45 83.44 181.26 80.48 185.86

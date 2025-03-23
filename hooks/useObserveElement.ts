@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react";
 
 /**
  * Observes the size of an element.
@@ -16,12 +16,12 @@ export function useObserveElement() {
         setRect(observedRect);
       });
 
-      resizeObserver.observe(scope.current)
+      resizeObserver.observe(scope.current);
 
       return () => {
         // Cleanup the observer when the component is unmounted
-        resizeObserver.disconnect()
-      }
+        resizeObserver.disconnect();
+      };
     }
   }, []);
 

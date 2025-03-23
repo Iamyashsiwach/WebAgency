@@ -1,12 +1,22 @@
-import { Cache, TextureLoader, Scene, Material, Renderer, Object3D, Light, DirectionalLight, AmbientLight } from 'three';
-import { DRACOLoader, GLTFLoader } from 'three-stdlib';
+import {
+  Cache,
+  TextureLoader,
+  Scene,
+  Material,
+  Renderer,
+  Object3D,
+  Light,
+  DirectionalLight,
+  AmbientLight,
+} from "three";
+import { DRACOLoader, GLTFLoader } from "three-stdlib";
 
 // Enable caching for all loaders
 Cache.enabled = true;
 
 const dracoLoader = new DRACOLoader();
 const gltfLoader = new GLTFLoader();
-dracoLoader.setDecoderPath('/draco/');
+dracoLoader.setDecoderPath("/draco/");
 gltfLoader.setDRACOLoader(dracoLoader);
 
 /**
@@ -48,7 +58,7 @@ export const cleanMaterial = (material: Material) => {
   for (const key of Object.keys(material)) {
     //@ts-ignore
     const value = material[key];
-    if (value && typeof value === 'object' && 'minFilter' in value) {
+    if (value && typeof value === "object" && "minFilter" in value) {
       //@ts-ignore
       (value as TextureLoader).dispose();
 
@@ -69,7 +79,9 @@ export const cleanRenderer = (renderer: Renderer | undefined) => {
 /**
  * Clean up lights by removing them from their parent
  */
-export const removeLights = (lights: (DirectionalLight | AmbientLight)[] | undefined) => {
+export const removeLights = (
+  lights: (DirectionalLight | AmbientLight)[] | undefined,
+) => {
   for (const light of lights ?? []) {
     light.parent?.remove(light);
   }

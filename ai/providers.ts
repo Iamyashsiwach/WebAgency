@@ -21,19 +21,19 @@ export const model = customProvider({
 
 export type modelID = Parameters<(typeof model)["languageModel"]>["0"];
 
-export type ModelID = 'llama-3.3-70b-versatile' ;
+export type ModelID = "llama-3.3-70b-versatile";
 
-export type Model = "llama-3.3-70b-versatile" ;
+export type Model = "llama-3.3-70b-versatile";
 
 export const mappings = {
-  'llama-3.3-70b-versatile': model.languageModel('llama-3.3-70b-versatile'),
+  "llama-3.3-70b-versatile": model.languageModel("llama-3.3-70b-versatile"),
   // 'llama-3.1-8b-instant': model.languageModel('llama-3.1-8b-instant'),
 } as const satisfies Record<ModelID, ReturnType<typeof model.languageModel>>;
 
 export const modelProviders = {
-  'llama-3.3-70b-versatile': {
-    modelId: 'llama-3.3-70b-versatile',
-    name: 'Llama 3.3 70B Versatile',
+  "llama-3.3-70b-versatile": {
+    modelId: "llama-3.3-70b-versatile",
+    name: "Llama 3.3 70B Versatile",
   },
   // 'llama-3.1-8b-instant': {
   //   modelId: 'llama-3.1-8b-instant',
@@ -45,4 +45,4 @@ export const modelProviders = {
   // },
 } as const;
 
-export const defaultModel = 'llama-3.3-70b-versatile';
+export const defaultModel = "llama-3.3-70b-versatile";

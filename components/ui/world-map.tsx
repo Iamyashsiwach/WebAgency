@@ -5,7 +5,6 @@ import { motion } from "motion/react";
 import DottedMap from "dotted-map";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import StyledLink from "@/components/ui/StyledLink/StyledLink";
 interface MapProps {
   dots?: Array<{
     start: { lat: number; lng: number; label?: string };
@@ -14,10 +13,7 @@ interface MapProps {
   lineColor?: string;
 }
 
-export function WorldMap({
-  dots = [],
-  lineColor = "#0ea5e9",
-}: MapProps) {
+export function WorldMap({ dots = [], lineColor = "#0ea5e9" }: MapProps) {
   const svgRef = useRef<SVGSVGElement>(null);
   const map = new DottedMap({ height: 100, grid: "diagonal" });
 
@@ -38,7 +34,7 @@ export function WorldMap({
 
   const createCurvedPath = (
     start: { x: number; y: number },
-    end: { x: number; y: number }
+    end: { x: number; y: number },
   ) => {
     const midX = (start.x + end.x) / 2;
     const midY = Math.min(start.y, end.y) - 50;
@@ -165,7 +161,7 @@ export function WorldMap({
           </g>
         ))}
       </svg>
-   {/* <div className="py-4 text-center text-sm">
+      {/* <div className="py-4 text-center text-sm">
    <p>Copyright © {new Date().getFullYear()} All rights reserved</p>
    <p>
      Made with ❤️ by{" "}
@@ -177,4 +173,3 @@ export function WorldMap({
     </div>
   );
 }
-  

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 /**
  * Hides the scroll indicator when the user scrolls down and shows it when the user scrolls up.
@@ -11,9 +11,14 @@ const useScrollIndicator = (mountDelay = 0, scrollThreshold = 20) => {
   const [scrollIndicatorIsMount, setScrollIndicatorIsMount] = useState(false);
 
   useEffect(() => {
-
-    const hiddenId = setTimeout(() => setScrollIndicatorHidden(false), (mountDelay));
-    const mountId = setTimeout(() => setScrollIndicatorIsMount(true), (mountDelay + 1));
+    const hiddenId = setTimeout(
+      () => setScrollIndicatorHidden(false),
+      mountDelay,
+    );
+    const mountId = setTimeout(
+      () => setScrollIndicatorIsMount(true),
+      mountDelay + 1,
+    );
 
     const toggleAtTop = () => {
       const scrolled = document.documentElement.scrollTop;
@@ -21,13 +26,13 @@ const useScrollIndicator = (mountDelay = 0, scrollThreshold = 20) => {
       else if (scrolled < scrollThreshold) setScrollIndicatorHidden(false);
     };
 
-    window.addEventListener('scroll', toggleAtTop);
+    window.addEventListener("scroll", toggleAtTop);
 
     return () => {
       clearTimeout(hiddenId);
       clearTimeout(mountId);
-      window.removeEventListener('scroll', toggleAtTop);
-    }
+      window.removeEventListener("scroll", toggleAtTop);
+    };
   }, [mountDelay, scrollThreshold]);
 
   return { isHidden: scrollIndicatorIsMount ? scrollIndicatorHidden : true };

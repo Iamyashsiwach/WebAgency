@@ -48,7 +48,11 @@ export const Header = () => {
               </svg>
             </div>
             <div className="jsx-e3e12cc6f9ad5a71 flex flex-row items-center gap-4">
-              <Link className="flex flex-row items-end gap-2" target="_blank" href="https://groq.com">
+              <Link
+                className="flex flex-row items-end gap-2"
+                target="_blank"
+                href="https://groq.com"
+              >
                 <GroqIcon size={32} />
               </Link>
             </div>

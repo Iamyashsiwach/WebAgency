@@ -24,7 +24,7 @@ export function Showcase() {
       {/* Sparkles Section */}
       <div className="h-[30rem] md:h-[35rem] w-full flex flex-col items-center justify-center relative px-4">
         <h1 className="text-3xl md:text-6xl lg:text-7xl xl:text-9xl font-bold text-center relative z-20">
-        Expertise
+          Expertise
         </h1>
         <div className="w-full max-w-[40rem] h-40 relative">
           {/* Gradients */}

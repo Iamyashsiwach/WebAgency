@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from "react";
 
 /**
  * Gets the window size.
@@ -8,12 +8,12 @@ export function useWindowSize() {
   const dimensions = useRef({ width: 1280, height: 800 });
 
   const createRuler = useCallback(() => {
-    let ruler: HTMLDivElement | null = document.createElement('div');
+    let ruler: HTMLDivElement | null = document.createElement("div");
 
-    ruler.style.position = 'fixed';
-    ruler.style.height = '100vh';
-    ruler.style.width = '0';
-    ruler.style.top = '0';
+    ruler.style.position = "fixed";
+    ruler.style.height = "100vh";
+    ruler.style.width = "0";
+    ruler.style.top = "0";
 
     document.documentElement.appendChild(ruler);
 
@@ -52,11 +52,11 @@ export function useWindowSize() {
       setWindowSize(getSize());
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     handleResize();
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, [getSize]);
 

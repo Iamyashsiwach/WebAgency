@@ -78,7 +78,9 @@
 
 @layer base {
   .transition-colors-400 {
-    transition: background-color 400ms ease-in-out, color 400ms ease-in-out;
+    transition:
+      background-color 400ms ease-in-out,
+      color 400ms ease-in-out;
   }
 
   * {
@@ -96,8 +98,8 @@
   }
 
   code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-      monospace;
+    font-family:
+      source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
   }
 
   svg,
@@ -187,7 +189,8 @@
   }
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   overflow: auto;

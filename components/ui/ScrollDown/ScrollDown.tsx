@@ -1,6 +1,6 @@
-import useScrollIndicator from '@/hooks/useScrollIndicator';
-import styles from './ScrollDown.module.css';
-import Link from 'next/link';
+import useScrollIndicator from "@/hooks/useScrollIndicator";
+import styles from "./ScrollDown.module.css";
+import Link from "next/link";
 
 interface ScrollDownProps {
   /**

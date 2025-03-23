@@ -3,9 +3,7 @@ export const ProjectOverview = () => {
   return (
     <div className="flex flex-col items-center justify-end">
       <h1 className="text-3xl font-semibold mb-4">Let’s Chat,</h1>
-      <p className="text-center">
-      We’re Live!
-      </p>
+      <p className="text-center">We’re Live!</p>
     </div>
   );
 };

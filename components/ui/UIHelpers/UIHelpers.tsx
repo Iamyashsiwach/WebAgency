@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import React, { Fragment } from 'react';
+import React, { Fragment } from "react";
 import ScrollUpButton from "@/components/ui/ScrollUpButton/ScrollUpButton";
 
 const UIHelpers: React.FC = () => (

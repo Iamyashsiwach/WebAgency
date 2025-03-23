@@ -244,6 +244,6 @@ void main() {
   noise = turbulence(0.01 * position + normal + time * 0.8);
   vec3 displacement = vec3((position.x) * noise, position.y * noise, position.z * noise);
   gl_Position = projectionMatrix * modelViewMatrix * vec4((position + normal) + displacement, 1.0);
-}`
+}`;
 
 export default vertexShader;

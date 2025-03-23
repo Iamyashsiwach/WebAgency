@@ -42,7 +42,7 @@
 .h2 {
   color: #e7ebf2;
   margin-bottom: 0.4em;
-  font-size: calc(1.1rem + .8vw);
+  font-size: calc(1.1rem + 0.8vw);
 }
 
 .h2 > span {

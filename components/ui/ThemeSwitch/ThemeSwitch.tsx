@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import * as React from 'react';
-import { useTheme } from 'next-themes';
-import { MoonIcon, SunIcon } from './Icons';
-import { Switch } from '@nextui-org/react';
+import * as React from "react";
+import { useTheme } from "next-themes";
+import { MoonIcon, SunIcon } from "./Icons";
+import { Switch } from "@nextui-org/react";
 
 export default function ThemeSwitch() {
   const { setTheme, resolvedTheme } = useTheme();
@@ -14,11 +14,11 @@ export default function ThemeSwitch() {
   // default -> dark mode
 
   React.useEffect(() => {
-    setIsSelected(resolvedTheme === 'light');
+    setIsSelected(resolvedTheme === "light");
   }, [resolvedTheme]);
 
   const toggleTheme = () => {
-    setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
   };
 
   return (
@@ -29,7 +29,7 @@ export default function ThemeSwitch() {
       color="success"
       startContent={<SunIcon />}
       endContent={<MoonIcon />}
-      aria-label='Toggle theme'
+      aria-label="Toggle theme"
     />
   );
 }
@@ -64,7 +64,7 @@ export default function ThemeSwitch() {
 //   const toggleTheme = () => {
 //     setThemeMode((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
 //   };
-  
+
 //   return (
 //     <div>
 //       <button onClick={toggleTheme}>
@@ -83,19 +83,19 @@ export default function ThemeSwitch() {
 //   const theme: ThemeProps = {
 //     mode: themeMode
 //   };
-  
+
 //   const toggleTheme = () => {
 //     setThemeMode((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
 //   };
-  
+
 //   return (
 //     <>
 //     <GlobalStyle theme={theme} />
 //     <StyledWrapper>
 //       <label className="theme-switch">
-//         <input 
-//           className="theme-switch__checkbox" 
-//           type="checkbox" 
+//         <input
+//           className="theme-switch__checkbox"
+//           type="checkbox"
 //           checked={theme.mode === "dark"}
 //           onChange={toggleTheme}
 //         />
@@ -136,7 +136,6 @@ export default function ThemeSwitch() {
 //     </>
 //   );
 // }
-
 
 // const StyledWrapper = styled.div`
 //   .theme-switch {

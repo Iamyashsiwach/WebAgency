@@ -20,7 +20,11 @@ export function Footer() {
           <p>Copyright © {new Date().getFullYear()} All rights reserved</p>
           <p>
             Made with ❤️ by{" "}
-            <StyledLink aria-label="Yash Siwach - agency" external href="https://yashsiwach.space">
+            <StyledLink
+              aria-label="Yash Siwach - agency"
+              external
+              href="https://yashsiwach.space"
+            >
               Yash Siwach
             </StyledLink>
           </p>
@@ -42,10 +46,16 @@ export function GlobeDemo() {
       </div>
 
       <div className="absolute text-sm text-neutral-500 bottom-[5%] md:bottom-10 left-1/2 transform -translate-x-1/2">
-        <p className="mb-1">Copyright © {new Date().getFullYear()} All rights reserved</p>
+        <p className="mb-1">
+          Copyright © {new Date().getFullYear()} All rights reserved
+        </p>
         <p>
           Made with ❤️ by{" "}
-          <StyledLink aria-label="Yash Siwach - agency" external href="https://yashsiwach.space">
+          <StyledLink
+            aria-label="Yash Siwach - agency"
+            external
+            href="https://yashsiwach.space"
+          >
             Yash Siwach
           </StyledLink>
         </p>

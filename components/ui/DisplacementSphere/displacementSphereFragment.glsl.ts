@@ -80,6 +80,6 @@ void main() {
 	#include <dithering_fragment>
 
   gl_FragColor = vec4(outgoingLight, diffuseColor.a);
-}`
+}`;
 
 export default fragmentShader;

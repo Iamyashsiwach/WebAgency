@@ -5,6 +5,7 @@ Welcome to **[ Agency ]**, your trusted partner in **web development, UI/UX desi
 ---
 
 ## 🔹 About Us
+
 At **[ Agency ]**, we believe in creating digital experiences that captivate, convert, and inspire. Whether you're a startup, small business, or enterprise, we tailor our solutions to meet your unique needs and enhance your online visibility.
 
 ---
@@ -19,7 +20,7 @@ At **[ Agency ]**, we believe in creating digital experiences that captivate, co
 ✅ **Pay-Per-Click (PPC) Advertising** – Targeted campaigns for higher conversions.  
 ✅ **Social Media Marketing** – Boost brand awareness and engagement on platforms like Facebook, Instagram, and LinkedIn.  
 ✅ **Branding & Graphic Design** – Elevating your brand with creative visuals.  
-✅ **Custom Web Apps** – Tailor-made solutions for your business needs.  
+✅ **Custom Web Apps** – Tailor-made solutions for your business needs.
 
 ---
 
@@ -27,16 +28,17 @@ At **[ Agency ]**, we believe in creating digital experiences that captivate, co
 
 We leverage the latest technologies to build robust and scalable web solutions:
 
-- **Frontend:** React, Next.js, Vue.js, Tailwind CSS  
-- **Backend:** Node.js, Express.js, Laravel, Django  
-- **CMS & E-commerce:** WordPress, Shopify, Webflow  
-- **SEO & Analytics:** Google Analytics, Ahrefs, SEMrush, Moz  
-- **Databases:** MongoDB, PostgreSQL, Firebase  
-- **Cloud & DevOps:** AWS, Vercel, Docker  
+- **Frontend:** React, Next.js, Vue.js, Tailwind CSS
+- **Backend:** Node.js, Express.js, Laravel, Django
+- **CMS & E-commerce:** WordPress, Shopify, Webflow
+- **SEO & Analytics:** Google Analytics, Ahrefs, SEMrush, Moz
+- **Databases:** MongoDB, PostgreSQL, Firebase
+- **Cloud & DevOps:** AWS, Vercel, Docker
 
 ---
 
 ## 📂 Project Structure
+
 ```
 your-project/
 │
@@ -105,7 +107,8 @@ your-project/
 live at https://webagency-alpha.vercel.app
 
 ## 📩 Get in Touch
+
 📧 Email: [iamyashsiwach@gmail.com](mailto:iamyashsiwach@gmail.com)  
-🌍 Website: [yashsiwach.space](https://yashsiwach.space)  
+🌍 Website: [yashsiwach.space](https://yashsiwach.space)
 
 Let's build something amazing together! 🚀

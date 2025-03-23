@@ -1,28 +1,42 @@
-import React from 'react';
+import React from "react";
 import {
-  IconArrowDown, IconArrowUp, IconEmail, IconExternal,
-  IconGitHub, IconInstagram, IconLinkedin,
-} from './index';
+  IconArrowDown,
+  IconArrowUp,
+  IconEmail,
+  IconExternal,
+  IconGitHub,
+  IconInstagram,
+  IconLinkedin,
+} from "./index";
 
 interface IconsProps {
-  name: 'GitHub' | 'Linkedin' | 'Instagram' | 'Email' | 'External' | 'ArrowUp' | 'ArrowDown' | string | undefined;
+  name:
+    | "GitHub"
+    | "Linkedin"
+    | "Instagram"
+    | "Email"
+    | "External"
+    | "ArrowUp"
+    | "ArrowDown"
+    | string
+    | undefined;
 }
 
 const Icon = ({ name }: IconsProps) => {
   switch (name) {
-    case 'GitHub':
+    case "GitHub":
       return <IconGitHub />;
-    case 'Linkedin':
+    case "Linkedin":
       return <IconLinkedin />;
-    case 'Instagram':
+    case "Instagram":
       return <IconInstagram />;
-    case 'Email':
+    case "Email":
       return <IconEmail />;
-    case 'External':
+    case "External":
       return <IconExternal />;
-    case 'ArrowUp':
+    case "ArrowUp":
       return <IconArrowUp />;
-    case 'ArrowDown':
+    case "ArrowDown":
       return <IconArrowDown />;
     default:
       return <IconExternal />;

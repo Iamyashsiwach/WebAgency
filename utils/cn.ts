@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge";
 
 /**
  * Combines multiple class names into a single string.
- * 
+ *
  * This function takes any number of class name values, processes them using `clsx`,
  * and then merges them using `twMerge` to ensure Tailwind CSS classes are correctly combined.
  *

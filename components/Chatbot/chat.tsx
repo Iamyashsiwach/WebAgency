@@ -7,7 +7,7 @@ import { ProjectOverview } from "./project-overview";
 import { Messages } from "./messages";
 // import { modelProviders, defaultModel } from '@/ai/providers';
 
-type Model = "llama-3.3-70b-versatile" ;
+type Model = "llama-3.3-70b-versatile";
 
 interface ChatProps {
   model: Model;
@@ -26,7 +26,7 @@ export default function Chat({ model, setModel }: ChatProps) {
   } = useChat({
     maxSteps: 5,
     body: {
-      model: model
+      model: model,
     },
   });
 
@@ -54,8 +54,7 @@ export default function Chat({ model, setModel }: ChatProps) {
         className="fixed bottom-0 left-0 right-0 w-full py-4  shadow-lg"
       >
         <div className="max-w-xl mx-auto px-4 sm:px-0">
-
-        {/* <Input
+          {/* <Input
           handleInputChange={handleInputChange}
           input={input}
           isLoading={isLoading}
@@ -63,15 +62,15 @@ export default function Chat({ model, setModel }: ChatProps) {
           stop={stop}
         /> */}
 
-        <Textarea
-          model={model}
-          setModel={setModel}
-          handleInputChange={handleInputChange}
-          input={input}
-          isLoading={isLoading}
-          status={status}
-          stop={stop}
-        />
+          <Textarea
+            model={model}
+            setModel={setModel}
+            handleInputChange={handleInputChange}
+            input={input}
+            isLoading={isLoading}
+            status={status}
+            stop={stop}
+          />
         </div>
       </form>
     </div>

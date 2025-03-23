@@ -1,12 +1,13 @@
-import { useReducedMotion, useSpring } from 'framer-motion';
-import { memo, useEffect, useRef, useState } from 'react';
-import styles from './DecoderText.module.css';
-import VisuallyHidden from '@/components/wrapper/VisuallyHidden/VisuallyHidden';
-import { tiro_Devanagari_Hindi } from '@/utils/fonts';
-import { delay } from '@/utils/delay';
-import { cn } from '@/utils/cn';
+import { useReducedMotion, useSpring } from "framer-motion";
+import { memo, useEffect, useState } from "react";
+import styles from "./DecoderText.module.css";
+import VisuallyHidden from "@/components/wrapper/VisuallyHidden/VisuallyHidden";
+import { tiro_Devanagari_Hindi } from "@/utils/fonts";
+import { delay } from "@/utils/delay";
+import { cn } from "@/utils/cn";
 
-export interface DecoderTextProps extends React.HTMLAttributes<HTMLSpanElement> {
+export interface DecoderTextProps
+  extends React.HTMLAttributes<HTMLSpanElement> {
   text: string;
   start?: boolean;
   startDelay?: number;
@@ -15,26 +16,56 @@ export interface DecoderTextProps extends React.HTMLAttributes<HTMLSpanElement> 
 }
 
 const hindi = [
-  'क', 'ख', 'ग', 'घ',
-  'च', 'छ', 'ज', 'झ', 'ञ',
-  'ट', 'ठ', 'ड', 'ढ', 'ण',
-  'त', 'थ', 'द', 'ध', 'न',
-  'प', 'फ', 'ब', 'भ', 'म',
-  'य', 'र', 'ल', 'व',
-  'श', 'ष', 'स', 'ह', 'क्ष',
-  'त्र'
+  "क",
+  "ख",
+  "ग",
+  "घ",
+  "च",
+  "छ",
+  "ज",
+  "झ",
+  "ञ",
+  "ट",
+  "ठ",
+  "ड",
+  "ढ",
+  "ण",
+  "त",
+  "थ",
+  "द",
+  "ध",
+  "न",
+  "प",
+  "फ",
+  "ब",
+  "भ",
+  "म",
+  "य",
+  "र",
+  "ल",
+  "व",
+  "श",
+  "ष",
+  "स",
+  "ह",
+  "क्ष",
+  "त्र",
 ];
 
 const glyphs = hindi;
 
 const CharType = {
-  Glyph: 'glyph',
-  Value: 'value',
+  Glyph: "glyph",
+  Value: "value",
 };
 
 const springConfig = { stiffness: 8, damping: 5 };
 
-function shuffle(content: string[], output: { type: string; value: string; }[], position: number) {
+function shuffle(
+  content: string[],
+  output: { type: string; value: string }[],
+  position: number,
+) {
   return content.map((value, index) => {
     if (index < position) {
       return { type: CharType.Value, value };
@@ -61,19 +92,24 @@ function shuffle(content: string[], output: { type: string; value: string; }[], 
  * @param {Object} [props.rest] - Additional properties to spread onto the outermost span.
  * @returns {JSX.Element} The rendered component.
  */
-const DecoderText = memo(function MemoDecoderText(
-  { text, start = true, startDelay = 0, eachCharClass, className, ...rest }: DecoderTextProps
-) {
+const DecoderText = memo(function MemoDecoderText({
+  text,
+  start = true,
+  startDelay = 0,
+  eachCharClass,
+  className,
+  ...rest
+}: DecoderTextProps) {
   const reduceMotion = useReducedMotion();
   const decoderSpring = useSpring(0, springConfig);
 
-  const [output, setOutput] = useState([{ type: CharType.Glyph, value: '' }]);
+  const [output, setOutput] = useState([{ type: CharType.Glyph, value: "" }]);
 
   useEffect(() => {
-    const content = text.split('');
+    const content = text.split("");
 
-    const unsubscribeSpring = decoderSpring.on('change', value => {
-      setOutput(prev => shuffle(content, prev, value));
+    const unsubscribeSpring = decoderSpring.on("change", (value) => {
+      setOutput((prev) => shuffle(content, prev, value));
     });
 
     const startSpring = async () => {
@@ -86,10 +122,12 @@ const DecoderText = memo(function MemoDecoderText(
     }
 
     if (reduceMotion) {
-      setOutput(content.map((value, index) => ({
-        type: CharType.Value,
-        value: content[index],
-      })));
+      setOutput(
+        content.map((value, index) => ({
+          type: CharType.Value,
+          value: content[index],
+        })),
+      );
     }
 
     return () => {
@@ -98,11 +136,16 @@ const DecoderText = memo(function MemoDecoderText(
   }, [decoderSpring, reduceMotion, start, startDelay, eachCharClass, text]);
 
   return (
-    <span className={cn(styles.text, tiro_Devanagari_Hindi.variable, className)} {...rest}>
+    <span
+      className={cn(styles.text, tiro_Devanagari_Hindi.variable, className)}
+      {...rest}
+    >
       <VisuallyHidden>{text}</VisuallyHidden>
       <span aria-hidden className={styles.content}>
         {output.map((item, id) => (
-          <span key={id} className={cn(styles[item.type], eachCharClass + id)}>{item.value}</span>
+          <span key={id} className={cn(styles[item.type], eachCharClass + id)}>
+            {item.value}
+          </span>
         ))}
       </span>
     </span>

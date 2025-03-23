@@ -1,7 +1,7 @@
-import { forwardRef } from 'react';
-import { cn } from '@/utils/cn';
-import { ReadOnlyChildren } from '@/utils/types';
-import styles from './VisuallyHidden.module.css';
+import { forwardRef } from "react";
+import { cn } from "@/utils/cn";
+import { ReadOnlyChildren } from "@/utils/types";
+import styles from "./VisuallyHidden.module.css";
 
 export interface VisuallyHiddenProps extends ReadOnlyChildren {
   className?: string[];
@@ -10,21 +10,33 @@ export interface VisuallyHiddenProps extends ReadOnlyChildren {
   visible?: boolean;
 }
 
-const VisuallyHidden = forwardRef<HTMLButtonElement, Readonly<VisuallyHiddenProps>>((
-  { className = [], showOnFocus = false, as: Component = 'span', children, visible = false, ...rest },
-  ref: React.ForwardedRef<HTMLButtonElement>
-) => (
-  <Component
-    className={cn(styles['visually-hidden'], ...className)}
-    data-hidden={!visible && !showOnFocus}
-    data-show-on-focus={showOnFocus}
-    ref={ref}
-    {...rest}
-  >
-    {children}
-  </Component>
-));
+const VisuallyHidden = forwardRef<
+  HTMLButtonElement,
+  Readonly<VisuallyHiddenProps>
+>(
+  (
+    {
+      className = [],
+      showOnFocus = false,
+      as: Component = "span",
+      children,
+      visible = false,
+      ...rest
+    },
+    ref: React.ForwardedRef<HTMLButtonElement>,
+  ) => (
+    <Component
+      className={cn(styles["visually-hidden"], ...className)}
+      data-hidden={!visible && !showOnFocus}
+      data-show-on-focus={showOnFocus}
+      ref={ref}
+      {...rest}
+    >
+      {children}
+    </Component>
+  ),
+);
 
-VisuallyHidden.displayName = 'VisuallyHidden';
+VisuallyHidden.displayName = "VisuallyHidden";
 
 export default VisuallyHidden;

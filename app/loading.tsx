@@ -5,5 +5,5 @@ export default function Loading() {
     <div className="flex items-center justify-center w-screen h-screen">
       <LoadingSpinner />
     </div>
-  )
+  );
 }

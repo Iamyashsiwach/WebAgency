@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 /**
  * Observes whether an element is in the viewport.
@@ -12,7 +12,7 @@ export function useInViewport(
   elementRef: React.RefObject<HTMLElement | HTMLCanvasElement | undefined>,
   unobserveOnIntersect: boolean = false,
   options = {},
-  shouldObserve = true
+  shouldObserve = true,
 ) {
   const [intersect, setIntersect] = useState(false);
   const [isUnobserved, setIsUnobserved] = useState(false);

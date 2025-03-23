@@ -1,4 +1,4 @@
-import { modelID, Model } from "@/ai/providers";
+import { Model } from "@/ai/providers";
 import { Textarea as ShadcnTextarea } from "@/components/Chatbot/ui/textarea";
 import { ArrowUp } from "lucide-react";
 import { ModelPicker } from "./model-picker";
@@ -42,10 +42,7 @@ export const Textarea = ({
           }
         }}
       />
-      <ModelPicker
-        model={model}
-        setModel={setModel}
-      />
+      <ModelPicker model={model} setModel={setModel} />
 
       {status === "streaming" || status === "submitted" ? (
         <button

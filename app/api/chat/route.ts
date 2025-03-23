@@ -1,4 +1,4 @@
-import { model, modelID, mappings } from "@/ai/providers";
+import { modelID, mappings } from "@/ai/providers";
 import { weatherTool } from "@/ai/tools";
 import { streamText, UIMessage } from "ai";
 

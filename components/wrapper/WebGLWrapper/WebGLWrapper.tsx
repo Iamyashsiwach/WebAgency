@@ -1,6 +1,6 @@
-import React from 'react';
-import { useIsClient, useWebGLDetection } from '@/hooks';
-import { ReadOnlyChildren } from '@/utils/types';
+import React from "react";
+import { useIsClient, useWebGLDetection } from "@/hooks";
+import { ReadOnlyChildren } from "@/utils/types";
 
 const WebGLWrapper: React.FC<ReadOnlyChildren> = ({ children }) => {
   const { isSupported, error } = useWebGLDetection();
