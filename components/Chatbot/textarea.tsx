@@ -1,4 +1,4 @@
-import { modelID } from "@/ai/providers";
+import { modelID, Model } from "@/ai/providers";
 import { Textarea as ShadcnTextarea } from "@/components/Chatbot/ui/textarea";
 import { ArrowUp } from "lucide-react";
 import { ModelPicker } from "./model-picker";
@@ -9,8 +9,8 @@ interface InputProps {
   isLoading: boolean;
   status: string;
   stop: () => void;
-  selectedModel: modelID;
-  setSelectedModel: (model: modelID) => void;
+  model: Model;
+  setModel: (model: Model) => void;
 }
 
 export const Textarea = ({
@@ -19,8 +19,8 @@ export const Textarea = ({
   isLoading,
   status,
   stop,
-  selectedModel,
-  setSelectedModel,
+  model,
+  setModel,
 }: InputProps) => {
   return (
     <div className="relative w-full pt-4">
@@ -43,8 +43,8 @@ export const Textarea = ({
         }}
       />
       <ModelPicker
-        setSelectedModel={setSelectedModel}
-        selectedModel={selectedModel}
+        model={model}
+        setModel={setModel}
       />
 
       {status === "streaming" || status === "submitted" ? (

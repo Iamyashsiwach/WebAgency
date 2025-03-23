@@ -1,13 +1,20 @@
 "use client";
 
 import { useChat } from "ai/react";
-import { useState } from "react";
+// import { useState } from "react";
 import { Textarea } from "./textarea";
 import { ProjectOverview } from "./project-overview";
 import { Messages } from "./messages";
+// import { modelProviders, defaultModel } from '@/ai/providers';
 
-export default function Chat() {
-  const [selectedModel, setSelectedModel] = useState<"deepseek-r1-distill-llama-70b" | "llama-3.3-70b-versatile" | "llama-3.1-8b-instant">("deepseek-r1-distill-llama-70b");
+type Model = "llama-3.3-70b-versatile" ;
+
+interface ChatProps {
+  model: Model;
+  setModel: (model: Model) => void;
+}
+
+export default function Chat({ model, setModel }: ChatProps) {
   const {
     messages,
     input,
@@ -19,7 +26,7 @@ export default function Chat() {
   } = useChat({
     maxSteps: 5,
     body: {
-      selectedModel,
+      model: model
     },
   });
 
@@ -32,20 +39,22 @@ export default function Chat() {
   if (error) return <div>{error.message}</div>;
 
   return (
-    <div className="h-dvh flex flex-col justify-center w-full stretch">
-      {/* <Header /> */}
-      {messages.length === 0 ? (
-        <div className="max-w-xl mx-auto w-full">
-          <ProjectOverview />
-          {/* <SuggestedPrompts sendMessage={sendMessage} /> */}
-        </div>
-      ) : (
-        <Messages messages={messages} isLoading={isLoading} status={status} />
-      )}
+    <div className="flex flex-col w-full h-full relative">
+      <div className="flex-1 overflow-y-auto pb-24">
+        {messages.length === 0 ? (
+          <div className="w-full">
+            <ProjectOverview />
+          </div>
+        ) : (
+          <Messages messages={messages} isLoading={isLoading} status={status} />
+        )}
+      </div>
       <form
         onSubmit={handleSubmit}
-        className="pb-8 bg-white dark:bg-black w-full max-w-xl mx-auto px-4 sm:px-0"
+        className="fixed bottom-0 left-0 right-0 w-full py-4  shadow-lg"
       >
+        <div className="max-w-xl mx-auto px-4 sm:px-0">
+
         {/* <Input
           handleInputChange={handleInputChange}
           input={input}
@@ -55,14 +64,15 @@ export default function Chat() {
         /> */}
 
         <Textarea
-          selectedModel={selectedModel}
-          setSelectedModel={setSelectedModel}
+          model={model}
+          setModel={setModel}
           handleInputChange={handleInputChange}
           input={input}
           isLoading={isLoading}
           status={status}
           stop={stop}
         />
+        </div>
       </form>
     </div>
   );

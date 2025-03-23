@@ -14,8 +14,8 @@ interface LogoProps {
 }
 
 const handleScrollReset = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-  event.preventDefault();
-  window.scrollTo(0, 0);
+  // event.preventDefault(); 
+   window.scrollTo(0, 0);
   window.location.hash = '';
 }
 

@@ -1,4 +1,4 @@
-import { model, modelID } from "@/ai/providers";
+import { model, modelID, mappings } from "@/ai/providers";
 import { weatherTool } from "@/ai/tools";
 import { streamText, UIMessage } from "ai";
 
@@ -8,11 +8,12 @@ export const maxDuration = 30;
 export async function POST(req: Request) {
   const {
     messages,
-    selectedModel,
-  }: { messages: UIMessage[]; selectedModel: modelID } = await req.json();
+    model: modelID,
+  }: { messages: UIMessage[]; model: modelID } = await req.json();
 
+  const languageModel = mappings[modelID];
   const result = streamText({
-    model: model.languageModel(selectedModel),
+    model: languageModel,
     system: "You are a helpful assistant.",
     messages,
     tools: {
