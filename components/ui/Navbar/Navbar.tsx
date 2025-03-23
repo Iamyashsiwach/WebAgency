@@ -36,17 +36,27 @@ const Navbar: React.FC = () => (
       </NavbarBrand>
 
       <NavbarContent className="transition-colors-400" justify="end">
-      <a
-  href="https://wa.me/917206099609" 
-  target="_blank" 
-  rel="noopener noreferrer"
-  className="relative inline-flex items-center justify-center overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
->
-  <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-  <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-4 py-2 text-xs sm:text-sm md:text-base font-medium text-white backdrop-blur-3xl">
-    Chat on WhatsApp
-  </span>
-</a>
+        <NavbarItem>
+          <Link href="/chatbot" className="relative inline-flex items-center justify-center overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-4 py-2 text-xs sm:text-sm md:text-base font-medium text-white backdrop-blur-3xl">
+              AI Chat
+            </span>
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <a
+            href="https://wa.me/917206099609" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="relative inline-flex items-center justify-center overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+          >
+            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-4 py-2 text-xs sm:text-sm md:text-base font-medium text-white backdrop-blur-3xl">
+              Chat on WhatsApp
+            </span>
+          </a>
+        </NavbarItem>
         <NavbarItem>
           <ThemeSwitch />
         </NavbarItem>
