@@ -1,15 +1,19 @@
+import bundleAnalyzer from "@next/bundle-analyzer";
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  images: {
-    domains: ["images.unsplash.com", "aceternity.com", "pin.it"],
-  },
-  // other configurations...
-};
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
+const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
 });
 
-module.exports = withBundleAnalyzer({
-  // Your Next.js config
+const nextConfig = withBundleAnalyzer({
+  images: {
+    domains: ["images.unsplash.com", "aceternity.com", "pin.it"],
+  },
+  env: {
+    PINECONE_API_KEY: process.env.PINECONE_API_KEY,
+    PINECONE_INDEX: process.env.PINECONE_INDEX,
+  },
+  // other configurations...
 });
-module.exports = nextConfig;
+
+export default nextConfig;

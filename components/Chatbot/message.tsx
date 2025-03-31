@@ -161,8 +161,9 @@ const PurePreviewMessage = ({
                     >
                       <div
                         className={cn("flex flex-col gap-4", {
-                          "bg-secondary text-secondary-foreground px-3 py-2 rounded-tl-xl rounded-tr-xl rounded-bl-xl":
+                          "bg-secondary text-black dark:text-white px-3 py-2 rounded-tl-xl rounded-tr-xl rounded-bl-xl":
                             message.role === "user",
+                          "text-black dark:text-white": message.role === "assistant"
                         })}
                       >
                         <Markdown>{part.text}</Markdown>

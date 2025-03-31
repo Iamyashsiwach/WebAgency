@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot API Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-height: 100px;
+            white-space: pre-wrap;
+            background-color: #fff;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        input {
+            padding: 10px;
+            width: 70%;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .error {
+            color: #d32f2f;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #ffebee;
+            border-radius: 4px;
+            border: 1px solid #ffcdd2;
+        }
+        .debug {
+            font-family: monospace;
+            background: #f8f9fa;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 4px;
+            border: 1px solid #e9ecef;
+            max-height: 300px;
+            overflow-y: auto;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+        }
+        .section h3 {
+            margin-top: 0;
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Test Chat API</h1>
+        <div class="input-group">
+            <input type="text" id="messageInput" placeholder="Type your message here..." value="What services do you offer?">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+        
+        <div class="section">
+            <h3>Response:</h3>
+            <div id="result">Results will appear here</div>
+        </div>
+        
+        <div class="section">
+            <h3>Raw Response:</h3>
+            <div id="rawResponse">Raw response will appear here</div>
+        </div>
+        
+        <div id="error" class="error"></div>
+        <div id="debug" class="debug"></div>
+    </div>
+    
+    <script>
+        function logDebug(message) {
+            const debugDiv = document.getElementById('debug');
+            const timestamp = new Date().toLocaleTimeString();
+            debugDiv.textContent += `[${timestamp}] ${message}\n`;
+            debugDiv.scrollTop = debugDiv.scrollHeight;
+        }
+
+        async function sendMessage() {
+            const messageInput = document.getElementById('messageInput');
+            const resultDiv = document.getElementById('result');
+            const rawResponseDiv = document.getElementById('rawResponse');
+            const errorDiv = document.getElementById('error');
+            const debugDiv = document.getElementById('debug');
+            
+            // Clear previous results
+            resultDiv.textContent = "Loading...";
+            rawResponseDiv.textContent = "";
+            errorDiv.textContent = "";
+            debugDiv.textContent = "";
+            
+            try {
+                const message = messageInput.value;
+                logDebug(`Sending request with message: ${message}`);
+                
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                    },
+                    body: JSON.stringify({ message }),
+                });
+                
+                logDebug(`Response status: ${response.status}`);
+                logDebug(`Response headers: ${JSON.stringify(Object.fromEntries(response.headers.entries()), null, 2)}`);
+                
+                const responseText = await response.text();
+                logDebug(`Raw response text: ${responseText}`);
+                
+                rawResponseDiv.textContent = responseText || "Empty response received";
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                if (!responseText) {
+                    resultDiv.textContent = "Empty response received from server";
+                    errorDiv.textContent = "Server returned an empty response";
+                    return;
+                }
+                
+                try {
+                    const data = JSON.parse(responseText);
+                    logDebug(`Parsed response data: ${JSON.stringify(data, null, 2)}`);
+                    
+                    if (data.error) {
+                        errorDiv.textContent = `Error: ${data.error}`;
+                    }
+                    
+                    resultDiv.textContent = data.response || JSON.stringify(data, null, 2);
+                } catch (parseError) {
+                    console.error("JSON parse error:", parseError);
+                    logDebug(`JSON parse error: ${parseError.message}`);
+                    resultDiv.textContent = `Error parsing JSON: ${parseError.message}\n\nRaw response: ${responseText}`;
+                    errorDiv.textContent = "Failed to parse server response as JSON";
+                }
+            } catch (error) {
+                console.error("Network error:", error);
+                logDebug(`Network error: ${error.message}`);
+                resultDiv.textContent = `Network error: ${error.message}`;
+                rawResponseDiv.textContent = `Request failed: ${error.message}`;
+                errorDiv.textContent = "Failed to connect to server";
+            }
+        }
+        
+        // Auto-send on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Uncomment the line below to auto-send on page load
+            // sendMessage();
+        });
+    </script>
+</body>
+</html> 

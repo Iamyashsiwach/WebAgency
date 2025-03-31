@@ -2,10 +2,11 @@ import { Model } from "@/ai/providers";
 import { Textarea as ShadcnTextarea } from "@/components/Chatbot/ui/textarea";
 import { ArrowUp } from "lucide-react";
 import { ModelPicker } from "./model-picker";
+import { ChangeEvent } from "react";
 
 interface InputProps {
   input: string;
-  handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleInputChange: (event: ChangeEvent<HTMLTextAreaElement>) => void;
   isLoading: boolean;
   status: string;
   stop: () => void;
@@ -25,18 +26,16 @@ export const Textarea = ({
   return (
     <div className="relative w-full pt-4">
       <ShadcnTextarea
-        className="resize-none bg-secondary w-full rounded-2xl pr-12 pt-4 pb-16"
+        className="resize-none bg-white dark:bg-zinc-800 w-full rounded-2xl pr-12 pt-4 pb-16 text-black dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
         value={input}
         autoFocus
         placeholder={"Say something..."}
-        // @ts-expect-error err
         onChange={handleInputChange}
         onKeyDown={(e) => {
           if (e.key === "Enter" && !e.shiftKey) {
             e.preventDefault();
             if (input.trim() && !isLoading) {
-              // @ts-expect-error err
-              const form = e.target.closest("form");
+              const form = (e.target as HTMLElement).closest("form");
               if (form) form.requestSubmit();
             }
           }

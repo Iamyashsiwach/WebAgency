@@ -1,15 +1,16 @@
-import type { Message as TMessage } from "ai";
 import { Message } from "./message";
 import { useScrollToBottom } from "@/libs/Chatbot-lib/hooks/use-scroll-to-bottom";
 
+interface Message {
+  id: string;
+  role: 'user' | 'assistant';
+  content: string;
+}
+
 export const Messages = ({
   messages,
-  isLoading,
-  status,
 }: {
-  messages: TMessage[];
-  isLoading: boolean;
-  status: "error" | "submitted" | "streaming" | "ready";
+  messages: Message[];
 }) => {
   const [containerRef, endRef] = useScrollToBottom();
   return (
@@ -18,14 +19,23 @@ export const Messages = ({
       ref={containerRef}
     >
       <div className="max-w-xl mx-auto pt-8">
-        {messages.map((m, i) => (
-          <Message
-            key={i}
-            isLatestMessage={i === messages.length - 1}
-            isLoading={isLoading}
-            message={m}
-            status={status}
-          />
+        {messages.map((message) => (
+          <div
+            key={message.id}
+            className={`flex flex-col ${
+              message.role === 'user' ? 'items-end' : 'items-start'
+            } mb-4`}
+          >
+            <div
+              className={`max-w-[80%] rounded-lg p-3 ${
+                message.role === 'user'
+                  ? 'bg-blue-500 text-white'
+                  : 'bg-gray-200 dark:bg-zinc-700 text-black dark:text-white'
+              }`}
+            >
+              {message.content}
+            </div>
+          </div>
         ))}
         <div className="h-1" ref={endRef} />
       </div>

@@ -2,8 +2,8 @@ import NextLink from "next/link";
 export const ProjectOverview = () => {
   return (
     <div className="flex flex-col items-center justify-end">
-      <h1 className="text-3xl font-semibold mb-4">Let’s Chat,</h1>
-      <p className="text-center">We’re Live!</p>
+      <h1 className="text-3xl font-semibold mb-4 text-black dark:text-white">Let&apos;s Chat,</h1>
+      <p className="text-center text-black dark:text-white">We&apos;re Live!</p>
     </div>
   );
 };
