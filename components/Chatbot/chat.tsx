@@ -46,7 +46,7 @@ export default function Chat({ model, setModel }: ChatProps) {
             <ProjectOverview />
           </div>
         ) : (
-          <Messages messages={messages} isLoading={isLoading} status={status} />
+          <Messages messages={messages} />
         )}
       </div>
       <form

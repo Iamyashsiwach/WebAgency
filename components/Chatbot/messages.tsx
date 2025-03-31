@@ -3,14 +3,18 @@ import { useScrollToBottom } from "@/libs/Chatbot-lib/hooks/use-scroll-to-bottom
 
 interface Message {
   id: string;
-  role: 'user' | 'assistant';
+  role: 'data' | 'user' | 'assistant' | 'system';
   content: string;
 }
 
 export const Messages = ({
   messages,
+  isLoading,
+  status,
 }: {
   messages: Message[];
+  isLoading?: boolean;
+  status?: string;
 }) => {
   const [containerRef, endRef] = useScrollToBottom();
   return (
