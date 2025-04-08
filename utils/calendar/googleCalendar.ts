@@ -95,7 +95,7 @@ ${message ? `\nAdditional Notes:\n${message}` : ''}
       },
       attendees: [
         { email }, // Client email
-        { email: process.env.TEAM_EMAIL || 'team@webagency.com' }, // Your team email
+        { email: process.env.TEAM_EMAIL || 'team@goonline.site' }, // Your team email
       ],
       reminders: {
         useDefault: false,

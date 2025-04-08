@@ -122,7 +122,7 @@ export default function ScheduleMeeting() {
                 <input
                   {...register("name", { required: "Name is required" })}
                   className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-transparent"
-                  placeholder="John Doe"
+                  placeholder="Yash Siwach"
                 />
                 {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
               </div>
@@ -155,7 +155,7 @@ export default function ScheduleMeeting() {
                 <input
                   {...register("phone", { required: "Phone number is required" })}
                   className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-transparent"
-                  placeholder="+1 (555) 123-4567"
+                  placeholder="+91 1234567890"
                   type="tel"
                 />
                 {errors.phone && <p className="text-red-500 text-sm">{errors.phone.message}</p>}

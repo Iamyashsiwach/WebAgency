@@ -61,12 +61,12 @@ export async function POST(request: Request) {
       console.log('Attempting to send emails...');
       await sendEmail({
         to: data.email,
-        subject: 'Meeting Confirmation - Web Agency',
+        subject: 'Your Meeting with Web Agency is Confirmed',
         html: generateClientEmail(data),
       });
       
       await sendEmail({
-        to: process.env.TEAM_EMAIL || 'team@webagency.com',
+        to: process.env.TEAM_EMAIL || 'team@goonline.site',
         subject: `New Meeting: ${data.meetingType} with ${data.name}`,
         html: generateTeamEmail(data),
       });
