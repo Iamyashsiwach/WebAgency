@@ -83,7 +83,7 @@ export default function ScheduleMeeting() {
         <div className="text-center mb-10">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Schedule a Meeting</h1>
           <p className="text-lg opacity-80 max-w-2xl mx-auto">
-            Book a time to discuss your project needs with our expert team. We're here to help bring your digital vision to life.
+            Book a time to discuss your project needs with our expert team. We&apos;re here to help bring your digital vision to life.
           </p>
         </div>
 
@@ -97,7 +97,7 @@ export default function ScheduleMeeting() {
               <CalendarCheck size={48} className="text-green-600 dark:text-green-400" />
             </div>
             <h2 className="text-2xl font-bold mb-2">Meeting Scheduled!</h2>
-            <p className="mb-6">Thank you for scheduling a meeting with us. We've sent a confirmation to your email with all the details.</p>
+            <p className="mb-6">Thank you for scheduling a meeting with us. We&apos;ve sent a confirmation to your email with all the details.</p>
             <button 
               onClick={() => setIsSubmitted(false)}
               className="px-6 py-2 bg-black dark:bg-white text-white dark:text-black rounded-md hover:opacity-90 transition-opacity"
