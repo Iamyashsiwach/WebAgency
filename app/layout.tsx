@@ -10,7 +10,8 @@ import { gotham } from "@/utils/fonts";
 import { longDescription } from "@/utils/config";
 import { ReadOnlyChildren } from "@/utils/types";
 import UIHelpers from "@/components/ui/UIHelpers/UIHelpers";
-import Navbar from "@/components/ui/Navbar/Navbar";
+// import Navbar from "@/components/ui/Navbar/Navbar";
+import { NavbarDemo } from "@/app/navbar";
 import NavIcons from "@/components/ui/NavIcons/NavIcons";
 import "./globals.css";
 
@@ -109,7 +110,7 @@ export default function RootLayout({ children }: ReadOnlyChildren) {
       >
         <ThemeProvider>
           <NextUIProvider>
-            <Navbar />
+            <NavbarDemo />
             <NavIcons />
 
             <QueryProvider>{children}</QueryProvider>
