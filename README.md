@@ -112,3 +112,38 @@ live at https://webagency-alpha.vercel.app
 🌍 Website: [yashsiwach.space](https://yashsiwach.space)
 
 Let's build something amazing together! 🚀
+
+## Meeting Scheduling System
+
+The website includes a meeting scheduling system that allows clients to book appointments with your team. 
+
+### Email Configuration with Mailjet
+
+To set up email notifications for meeting bookings:
+
+1. Create a free account at [Mailjet](https://www.mailjet.com/)
+2. Get your API Key and Secret Key from the Mailjet dashboard
+3. Add these keys to your `.env.local` file:
+
+```
+MAILJET_API_KEY=your-api-key-here
+MAILJET_SECRET_KEY=your-secret-key-here
+EMAIL_FROM=your-sender-email@example.com
+TEAM_EMAIL=your-team-email@example.com
+```
+
+### Google Calendar Integration (Optional)
+
+For Google Calendar integration:
+
+1. Create a project in [Google Cloud Console](https://console.cloud.google.com/)
+2. Enable the Google Calendar API
+3. Create OAuth 2.0 credentials
+4. Get a refresh token using OAuth Playground
+5. Add the credentials to your `.env.local` file:
+
+```
+GOOGLE_CLIENT_ID=your-client-id
+GOOGLE_CLIENT_SECRET=your-client-secret
+GOOGLE_REFRESH_TOKEN=your-refresh-token
+```
