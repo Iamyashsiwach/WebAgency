@@ -16,8 +16,8 @@ import { ThemeToggle } from "@/components/ui/theme-toggle";
 export function NavbarDemo() {
   const navItems = [
     {
-      name: " ",
-      link: "#",
+      name: "Home",
+      link: "/",
     },
 
   ];
@@ -72,10 +72,10 @@ export function NavbarDemo() {
                 variant="primary"
                 className="w-full"
               >
-                need help?
+                Need help?
               </NavbarButton>
               <NavbarButton
-                href="/schedule"
+                href="/Schedule"
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
                 className="w-full"
