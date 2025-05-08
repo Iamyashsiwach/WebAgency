@@ -1,9 +1,9 @@
 // app/chatbot/layout.tsx
-import type { Metadata } from "next";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "AI Chat - Web Agency",
-  description: "Chat with our AI assistant",
+  title: 'AI Chat & Voice Assistant | Web Agency',
+  description: 'Connect with our AI assistant through text or voice for immediate assistance',
 };
 
 export default function ChatbotLayout({
@@ -11,5 +11,9 @@ export default function ChatbotLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return (
+    <div className="min-h-screen flex flex-col">
+      {children}
+    </div>
+  );
 }

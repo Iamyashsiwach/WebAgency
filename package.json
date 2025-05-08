@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@ai-sdk/groq": "^1.2.0",
+    "@daily-co/daily-js": "^0.79.0",
     "@langchain/community": "^0.3.0",
     "@langchain/core": "^0.3.42",
     "@langchain/openai": "^0.4.7",

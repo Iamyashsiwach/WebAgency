@@ -98,12 +98,21 @@ export default function ScheduleMeeting() {
             </div>
             <h2 className="text-2xl font-bold mb-2">Meeting Scheduled!</h2>
             <p className="mb-6">Thank you for scheduling a meeting with us. We&apos;ve sent a confirmation to your email with all the details.</p>
-            <button 
-              onClick={() => setIsSubmitted(false)}
-              className="px-6 py-2 bg-black dark:bg-white text-white dark:text-black rounded-md hover:opacity-90 transition-opacity"
-            >
-              Schedule Another Meeting
-            </button>
+            <div className="flex flex-col md:flex-row gap-4 justify-center">
+              <button 
+                onClick={() => setIsSubmitted(false)}
+                className="px-6 py-2 bg-black dark:bg-white text-white dark:text-black rounded-md hover:opacity-90 transition-opacity"
+              >
+                Schedule Another Meeting
+              </button>
+              <a 
+                href="/voice-call" 
+                className="px-6 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-opacity flex items-center justify-center gap-2"
+              >
+                <Phone size={16} />
+                Talk to Voice Agent Now
+              </a>
+            </div>
           </motion.div>
         ) : (
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 bg-white dark:bg-black/20 p-8 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800">

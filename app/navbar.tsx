@@ -19,7 +19,6 @@ export function NavbarDemo() {
       name: "Home",
       link: "/",
     },
-
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -32,7 +31,7 @@ export function NavbarDemo() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton variant="secondary" href="/chatbot">Need Help!</NavbarButton>
+            <NavbarButton variant="secondary" href="/chatbot">AI Chat & Voice</NavbarButton>
             <NavbarButton variant="primary" href="/Schedule">Book a call</NavbarButton>
             <ThemeToggle />
           </div>
@@ -69,10 +68,10 @@ export function NavbarDemo() {
               <NavbarButton
                 href="/chatbot"
                 onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
+                variant="secondary"
                 className="w-full"
               >
-                Need help?
+                AI Chat & Voice
               </NavbarButton>
               <NavbarButton
                 href="/Schedule"
