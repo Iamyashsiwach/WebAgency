@@ -13,7 +13,7 @@ import UIHelpers from "@/components/ui/UIHelpers/UIHelpers";
 // import Navbar from "@/components/ui/Navbar/Navbar";
 import { NavbarDemo } from "@/app/navbar";
 import NavIcons from "@/components/ui/NavIcons/NavIcons";
-import Navigation from "@/components/ui/navigation";
+// import Navigation from "@/components/ui/navigation";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -117,7 +117,7 @@ export default function RootLayout({ children }: ReadOnlyChildren) {
             <QueryProvider>{children}</QueryProvider>
 
             <UIHelpers />
-            <Navigation />
+{/*             <Navigation /> */}
 
             <Toaster position="top-right" reverseOrder={false} />
           </NextUIProvider>
