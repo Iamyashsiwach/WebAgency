@@ -1,5 +1,6 @@
 "use client";
 import { FC } from "react";
+import { motion } from "framer-motion";
 // import { Showcase } from "@/app/sections/cards";
 
 const services = [
@@ -29,27 +30,69 @@ const services = [
   },
 ];
 
+// Animation variants
+const fadeInUp = {
+  initial: { opacity: 0, y: 60 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: "easeOut" }
+};
+
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
 const ServicesPage: FC = () => {
   return (
-    <main>
+    <main className="pt-20"> {/* Add padding for navbar */}
       {/* Hero Showcase Section */}
       {/* <Showcase /> */}
       
       {/* Detailed Services Section */}
-      <div className="container mx-auto px-4 py-16">
-        <h2 className="text-4xl font-bold mb-4 text-center">What We Offer</h2>
-        <p className="text-lg text-neutral-600 dark:text-neutral-300 mb-12 text-center max-w-3xl mx-auto">
+      <motion.div 
+        className="container mx-auto px-4 py-16"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <motion.h2 
+          className="text-4xl font-bold mb-4 text-center"
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          What We Offer
+        </motion.h2>
+        <motion.p 
+          className="text-lg text-neutral-600 dark:text-neutral-300 mb-12 text-center max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
           From concept to deployment, we provide comprehensive digital solutions that drive growth and deliver exceptional user experiences.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        </motion.p>
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          initial="initial"
+          animate="animate"
+          variants={staggerContainer}
+        >
           {services.map((service, index) => (
-            <div key={index} className="bg-neutral-100 dark:bg-neutral-800/50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <motion.div 
+              key={index} 
+              className="bg-neutral-100 dark:bg-neutral-800/50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+              variants={fadeInUp}
+              whileHover={{ y: -5, transition: { duration: 0.2 } }}
+            >
               <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
               <p className="text-neutral-600 dark:text-neutral-300">{service.description}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </main>
   );
 };

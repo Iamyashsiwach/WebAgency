@@ -87,6 +87,41 @@ export default function ScheduleMeeting() {
           </p>
         </div>
 
+        {/* Direct Contact Options */}
+        <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 p-6 rounded-lg mb-8 border border-blue-100 dark:border-blue-800/30">
+          <h2 className="text-xl font-bold mb-4 text-center">Prefer Direct Contact?</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <a 
+              href="tel:+919999999999" 
+              className="flex items-center gap-3 p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-all duration-300 hover:scale-105 border border-gray-100 dark:border-gray-700"
+            >
+              <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-full">
+                <Phone size={20} className="text-green-600 dark:text-green-400" />
+              </div>
+              <div>
+                <div className="font-medium text-gray-900 dark:text-gray-100">Call Us Directly</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">+91 9999999999</div>
+              </div>
+            </a>
+            
+            <a 
+              href="mailto:hello@webagency.com" 
+              className="flex items-center gap-3 p-4 bg-white dark:bg-gray-800 rounded-lg hover:shadow-md transition-all duration-300 hover:scale-105 border border-gray-100 dark:border-gray-700"
+            >
+              <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-full">
+                <Mail size={20} className="text-blue-600 dark:text-blue-400" />
+              </div>
+              <div>
+                <div className="font-medium text-gray-900 dark:text-gray-100">Email Us</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">hello@webagency.com</div>
+              </div>
+            </a>
+          </div>
+          <div className="text-center mt-4 text-sm text-gray-600 dark:text-gray-400">
+            Available Monday - Friday, 9:00 AM - 6:00 PM IST
+          </div>
+        </div>
+
         {isSubmitted ? (
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}

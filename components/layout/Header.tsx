@@ -19,7 +19,7 @@ const navItems = [
   { name: "About", link: "/about" },
   { name: "Services", link: "/services" },
   { name: "Portfolio", link: "/portfolio" },
-  { name: "Contact", link: "/contact" },
+  // { name: "Contact", link: "/contact" },
 ];
 
 export function Header() {
@@ -32,9 +32,9 @@ export function Header() {
         <NavBody>
           <NavbarLogo />
           <NavItems items={navItems} />
-          <div className="flex items-center gap-4">
-            <NavbarButton variant="secondary" href="/chatbot">AI Chat & Voice</NavbarButton>
-            <NavbarButton variant="primary" href="/Schedule">Book a call</NavbarButton>
+          <div className="flex items-center gap-4"> {/* Reverted: was gap-2 */}
+            <NavbarButton variant="secondary" href="/chatbot">AI Chat & Voice</NavbarButton> {/* Removed compact */}
+            <NavbarButton variant="primary" href="/Schedule">Book a call</NavbarButton> {/* Removed compact */}
             <ThemeToggle />
           </div>
         </NavBody>

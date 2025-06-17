@@ -2,64 +2,168 @@
 import { FC, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink, Github, Zap, ArrowRight, Star } from "lucide-react";
+import { ExternalLink, ArrowRight, Star } from "lucide-react";
+import { motion } from "framer-motion";
 
-const categories = ["All", "Web Development", "UI/UX Design", "E-commerce", "Mobile Apps"];
+const categories = ["All", "Web Development", "UI/UX Design", "E-commerce", "CMS"];
+
+// Animation variants
+const fadeInUp = {
+  initial: { opacity: 0, y: 60 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: "easeOut" }
+};
+
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.15
+    }
+  }
+};
+
+const scaleIn = {
+  initial: { opacity: 0, scale: 0.8 },
+  animate: { opacity: 1, scale: 1 },
+  transition: { duration: 0.5, ease: "easeOut" }
+};
 
 const projects = [
   {
     id: 1,
-    title: "TechFlow SaaS Platform",
-    description: "A comprehensive project management platform with real-time collaboration features.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-    category: "Web Development",
+    title: "System Integrator Website with Custom CMS",
+    description: "A robust website for a system integration company featuring a tailored content management system to streamline service updates and internal processes.",
+    image: "/1.png",
+    category: "CMS",
     technologies: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
-    liveUrl: "#",
-    githubUrl: "#",
+    liveUrl: "https://www.reveeinfotech.com/",
     featured: true,
   },
   {
-    id: 2,
-    title: "Luxe Fashion Store",
-    description: "Premium e-commerce platform with advanced filtering and seamless checkout.",
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop",
+    id: 11,
+    title: "E-commerce Website",
+    description: "A modern and responsive e-commerce platform featuring product grids, filters, dynamic routing, and a sleek UI using the latest frontend technologies.",
+    image: "/11.png",
     category: "E-commerce",
-    technologies: ["Shopify", "React", "Node.js", "Stripe"],
+    technologies: ["next.js", "tailwindcss", "typescript", "shadcn/ui"],
     liveUrl: "#",
-    githubUrl: "#",
+  },
+  {
+    id: 2,
+    title: "NGO Website with Payment Gateway",
+    description: "A responsive NGO platform with donation support, event management, and Razorpay integration for secure online payments.",
+    image: "/3.png",
+    category: "Web Development",
+    technologies: ["Next.js", "React", "Node.js", "Razorpay", "Firebase"],
+    liveUrl: "https://smilefoudationsociety.vercel.app",
     featured: true,
   },
   {
     id: 3,
-    title: "HealthTech Mobile App",
-    description: "iOS and Android app for health monitoring with AI-powered insights.",
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop",
-    category: "Mobile Apps",
-    technologies: ["React Native", "Firebase", "TensorFlow"],
-    liveUrl: "#",
-    githubUrl: "#",
+    title: "Salon Website with Booking System",
+    description: "A modern salon website equipped with an online booking system, showcasing services, stylists, and appointment slots.",
+    image: "/4.png",
+    category: "Web Development",
+    technologies: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
+    liveUrl: "https://beauty-parlour-website.vercel.app/",
     featured: true,
   },
   {
     id: 4,
-    title: "Creative Agency Rebrand",
-    description: "Complete UI/UX redesign focusing on modern aesthetics and user experience.",
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop",
-    category: "UI/UX Design",
-    technologies: ["Figma", "Adobe Creative Suite", "Webflow"],
-    liveUrl: "#",
-    githubUrl: "#",
+    title: "Website for Information Technology (IT) Services & Consulting",
+    description: "A sleek corporate website designed for an IT consulting firm, including service listings, client showcases, and contact capabilities.",
+    image: "/5.png",
+    category: "Web Development",
+    technologies: ["wordpress", "php", "mysql"],
+    liveUrl: "http://virasatsolutions.com",
     featured: true,
   },
+  {
+    id: 5,
+    title: "Travel Agency Website",
+    description: "An engaging travel website offering tour packages, destination galleries, and inquiry forms to attract potential travelers.",
+    image: "/2.png",
+    category: "Web Development",
+    technologies: ["html", "css", "javascript", "bootstrap"],
+    liveUrl: "https://www.ruhanitrips.com/",
+    featured: true,
+  },
+  {
+    id: 6,
+    title: "Art Gallery Website",
+    description: "A visually rich online art gallery showcasing artwork collections, artist bios, and exhibition details.",
+    image: "/6.png",
+    category: "Web Development",
+    technologies: ["html", "css", "javascript", "bootstrap"],
+    liveUrl: "https://neha-kandari.github.io/photoframe/#home",
+    featured: true,
+  },
+  {
+    id: 7,
+    title: "Gym Website",
+    description: "A Figma-based design for a fitness-focused website featuring workout plans, trainer profiles, and membership options.",
+    image: "/7.png",
+    category: "UI/UX Design",
+    technologies: ["figma"],
+    liveUrl: "https://www.figma.com/proto/b1wR3W4cUSryI4rBCJZpKR/Fitness---Gym-Website-Design--Fitmaker---Community-?page-id=0%3A1&node-id=2-47&viewport=358%2C196%2C0.09&t=mwZMGDfZmv7MZiUO-1&scaling=min-zoom&content-scaling=fixed",
+  },
+  {
+    id: 8,
+    title: "E-commerce Website",
+    description: "A full-featured e-commerce platform with product listings, modern UI components, and a responsive layout built using the latest stack.",
+    image: "/9.png",
+    category: "Web Development",
+    technologies: ["next.js", "tailwindcss", "typescript", "shadcn/ui"],
+    liveUrl: "https://pmakemobilelcd.com/",
+  },
+  {
+    id: 9,
+    title: "Interior Design Website",
+    description: "A creative Figma prototype for an interior design firm, highlighting project galleries, service sections, and design concepts.",
+    image: "/8.png",
+    category: "UI/UX Design",
+    technologies: ["figma"],
+    liveUrl: "https://www.figma.com/proto/Idofiu2yi7cPfZXd53ySWR/Panto---Furniture-Landing-Page-Design--Community-?page-id=0%3A1&node-id=1-2&p=f&viewport=489%2C487%2C0.13&t=VHCoQAXjUXJufzTR-1&scaling=min-zoom&content-scaling=fixed",
+  },
+  {
+    id: 10,
+    title: "Furniture E-commerce Website",
+    description: "A clean and elegant e-commerce UI/UX concept for a furniture brand, featuring product views, categories, and smooth interactions.",
+    image: "/10.png",
+    category: "UI/UX Design",
+    technologies: ["figma"],
+    liveUrl: "https://www.figma.com/proto/lpHV3fKVx2mYmgBysqr0fg/eCommerce-Website-%7C-Web-Page-Design?page-id=0%3A1&node-id=117-336&p=f&viewport=200%2C264%2C0.07&t=Ly4kCpErwUh0JVJl-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=117%3A1143",
+  },
+  {
+    id: 12,
+    title: "Real Estate Website",
+    description: "A comprehensive real estate platform with property listings, advanced search filters, virtual tours, and agent contact features.",
+    image: "/12.png",
+    category: "Web Development",
+    technologies: ["React", "Node.js", "MongoDB", "Express"],
+    liveUrl: "#",
+  }
 ];
 
 const PortfolioPage: FC = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [currentFeatured, setCurrentFeatured] = useState(0);
+  const [showAllProjects, setShowAllProjects] = useState(false);
 
   const filteredProjects = selectedCategory === "All" 
     ? projects 
     : projects.filter(project => project.category === selectedCategory);
+
+  // Show only 6 projects initially, all when expanded
+  const displayedProjects = showAllProjects 
+    ? filteredProjects 
+    : filteredProjects.slice(0, 4);
+
+  // Reset to show less when category changes
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    setShowAllProjects(false);
+  };
 
   const featuredProjects = projects.filter(project => project.featured);
 
@@ -73,9 +177,14 @@ const PortfolioPage: FC = () => {
   }, [featuredProjects.length]);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-20"> {/* Add padding for navbar */}
       {/* Modern Hero Section */}
-      <section className="relative py-20 px-4 overflow-hidden">
+      <motion.section 
+        className="relative py-20 px-4 overflow-hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
@@ -89,25 +198,39 @@ const PortfolioPage: FC = () => {
         <div className="absolute top-40 right-20 w-32 h-32 bg-gray-600/20 rounded-full blur-xl animate-pulse delay-1000" />
         <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-slate-400/20 rounded-full blur-xl animate-pulse delay-2000" />
 
-        <div className="max-w-6xl mx-auto text-center relative z-10">
+        <motion.div 
+          className="max-w-6xl mx-auto text-center relative z-10"
+          initial="initial"
+          animate="animate"
+          variants={staggerContainer}
+        >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-full text-slate-600 dark:text-slate-300 text-sm font-medium mb-6 animate-fade-in">
+          <motion.div 
+            className="inline-flex items-center gap-2 px-4 py-2 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-full text-slate-600 dark:text-slate-300 text-sm font-medium mb-6"
+            variants={scaleIn}
+          >
             <Star size={16} className="fill-current text-amber-500" />
             Partnership Excellence Since 2020
-          </div>
+          </motion.div>
 
           {/* Main Title */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
+          <motion.h1 
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight"
+            variants={fadeInUp}
+          >
             <span className="bg-gradient-to-r from-slate-700 via-gray-800 to-slate-900 dark:from-slate-300 dark:via-gray-200 dark:to-slate-100 bg-clip-text text-transparent">
               Our Portfolio
             </span>
-          </h1>
+          </motion.h1>
 
           {/* Subtitle */}
-          <p className="text-lg md:text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto mb-8 leading-relaxed">
+          <motion.p 
+            className="text-lg md:text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto mb-8 leading-relaxed"
+            variants={fadeInUp}
+          >
             Four years of collaborative excellence, delivering innovative digital solutions as 
             <span className="text-slate-700 dark:text-slate-300 font-medium"> trusted partners</span>
-          </p>
+          </motion.p>
 
           {/* Stats with Animation */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
@@ -136,8 +259,8 @@ const PortfolioPage: FC = () => {
             Explore Our Work
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </Link>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
       {/* Auto-Rotating Featured Projects Gallery */}
       <section id="featured" className="py-16 px-4">
@@ -200,13 +323,6 @@ const PortfolioPage: FC = () => {
                           <ExternalLink size={16} />
                           Live Demo
                         </Link>
-                        <Link
-                          href={project.githubUrl}
-                          className="flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-lg hover:bg-white/30 transition-colors font-medium"
-                        >
-                          <Github size={16} />
-                          View Code
-                        </Link>
                       </div>
                     </div>
                   </div>
@@ -254,17 +370,17 @@ const PortfolioPage: FC = () => {
       </section>
 
       {/* All Projects */}
-      <section className="py-12 px-4 bg-neutral-50 dark:bg-neutral-900">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-10">All Projects</h2>
+      <section className="py-8 px-4 bg-neutral-50 dark:bg-neutral-900">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">All Projects</h2>
           
           {/* Filter Buttons */}
-          <div className="flex flex-wrap justify-center gap-3 mb-10">
+          <div className="flex flex-wrap justify-center gap-2 mb-6">
             {categories.map((category) => (
               <button
                 key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 text-sm ${
+                onClick={() => handleCategoryChange(category)}
+                className={`px-3 py-1.5 rounded-lg font-medium transition-all duration-300 text-xs md:text-sm ${
                   selectedCategory === category
                     ? "bg-slate-600 text-white shadow-md"
                     : "bg-white dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:bg-slate-50 dark:hover:bg-neutral-700 border border-neutral-200 dark:border-neutral-700"
@@ -276,31 +392,36 @@ const PortfolioPage: FC = () => {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredProjects.map((project) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4 lg:gap-6 mb-6">
+            {displayedProjects.map((project) => (
               <div
                 key={project.id}
-                className="group bg-white dark:bg-neutral-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-neutral-200 dark:border-neutral-700"
+                className="group bg-white dark:bg-neutral-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-neutral-200 dark:border-neutral-700 flex flex-col h-full"
               >
-                <div className="aspect-video relative overflow-hidden">
+                {/* Responsive image container */}
+                <div className="relative h-32 md:h-40 lg:h-48 overflow-hidden">
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute top-3 left-3">
-                    <span className="px-2 py-1 bg-slate-600 text-white text-xs rounded">
+                  <div className="absolute top-2 left-2">
+                    <span className="px-1.5 py-0.5 bg-slate-600 text-white text-[10px] md:text-xs rounded">
                       {project.category}
                     </span>
                   </div>
                 </div>
-                <div className="p-4">
-                  <h3 className="text-lg font-bold mb-2">{project.title}</h3>
-                  <p className="text-neutral-600 dark:text-neutral-300 text-sm mb-3">
+                
+                {/* Content area with flex-grow */}
+                <div className="p-2 md:p-3 lg:p-4 flex flex-col flex-grow">
+                  <h3 className="text-sm md:text-base lg:text-lg font-bold mb-1 md:mb-2 line-clamp-2">{project.title}</h3>
+                  <p className="text-neutral-600 dark:text-neutral-300 text-xs md:text-sm mb-2 md:mb-3 line-clamp-2 md:line-clamp-3 flex-grow">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-1.5 mb-3">
+                  
+                  {/* Technologies - responsive */}
+                  <div className="hidden md:flex flex-wrap gap-1.5 mb-3 min-h-[24px]">
                     {project.technologies.slice(0, 3).map((tech) => (
                       <span
                         key={tech}
@@ -310,48 +431,90 @@ const PortfolioPage: FC = () => {
                       </span>
                     ))}
                   </div>
-                  <div className="flex space-x-2">
+                  
+                  {/* Button at bottom */}
+                  <div className="mt-auto">
                     <Link
                       href={project.liveUrl}
-                      className="flex-1 text-center py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700 transition-colors text-sm"
+                      className="block w-full text-center py-1.5 md:py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700 transition-colors text-xs md:text-sm"
                     >
                       View Project
-                    </Link>
-                    <Link
-                      href={project.githubUrl}
-                      className="p-2 bg-neutral-600 text-white rounded-lg hover:bg-neutral-700 transition-colors"
-                    >
-                      <Github size={14} />
                     </Link>
                   </div>
                 </div>
               </div>
             ))}
           </div>
+
+          {/* Show More/Less Button */}
+          {filteredProjects.length > 4 && (
+            <div className="text-center">
+              <button
+                onClick={() => setShowAllProjects(!showAllProjects)}
+                className="inline-flex items-center gap-2 px-4 md:px-6 lg:px-8 py-2 md:py-3 lg:py-4 bg-slate-600 hover:bg-slate-700 text-white rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg group text-sm md:text-base"
+              >
+                {showAllProjects ? (
+                  <>
+                    Show Less Projects
+                    <ArrowRight size={16} className="rotate-90 group-hover:translate-y-1 transition-transform" />
+                  </>
+                ) : (
+                  <>
+                    Show More Projects ({filteredProjects.length - 4} more)
+                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                  </>
+                )}
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-16 px-4">
+      {/* See More Projects Section */}
+      <section className="py-16 px-4 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Start Your Project?</h2>
-          <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-6">
-            Let&apos;s collaborate to bring your vision to life with cutting-edge technology.
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-neutral-800 dark:text-neutral-200">
+            Want to See More?
+          </h2>
+          <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-8 max-w-2xl mx-auto">
+            We have worked on many more exciting projects across different industries. 
+            Get in touch to discuss your project and see more examples of our work.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Link
-              href="/contact"
-              className="inline-flex items-center px-6 py-3 bg-slate-600 text-white rounded-lg font-medium hover:bg-slate-700 transition-colors"
+              href="/Schedule"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg group"
             >
-              <Zap className="mr-2" size={18} />
-              Start Your Project
+              <ExternalLink size={18} />
+              Contact Us for More Projects
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
-              href="/services"
-              className="inline-flex items-center px-6 py-3 border-2 border-slate-600 text-slate-600 rounded-lg font-medium hover:bg-slate-50 dark:hover:bg-slate-900/20 transition-colors"
+              href="/Schedule"
+              className="inline-flex items-center gap-2 px-8 py-4 border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white rounded-lg font-medium transition-all duration-300"
             >
-              View Our Services
+              Schedule a Consultation
             </Link>
+          </div>
+
+          {/* Additional Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { value: "50+", label: "Total Projects" },
+              { value: "25+", label: "Happy Clients" },
+              { value: "5+", label: "Industries Served" },
+              { value: "100%", label: "Client Satisfaction" }
+            ].map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">
+                  {stat.value}
+                </div>
+                <div className="text-sm text-neutral-600 dark:text-neutral-400">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

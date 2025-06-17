@@ -7,7 +7,7 @@ const navLinks = [
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Portfolio", href: "/portfolio" },
-  { name: "Contact", href: "/contact" },
+  { name: "Schedule", href: "/Schedule" },
 ];
 
 const serviceLinks = [
@@ -18,9 +18,9 @@ const serviceLinks = [
 ];
 
 const socialLinks = [
-  { name: "Twitter", href: "https://twitter.com/yashsiwach", icon: Twitter },
-  { name: "LinkedIn", href: "https://www.linkedin.com/in/yash-siwach-216902246/", icon: Linkedin },
-  { name: "GitHub", href: "https://github.com/Yash-Siwach", icon: Github },
+  { name: "Twitter", href: "https://twitter.com/iamyashsiwach", icon: Twitter },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/yash-siwach", icon: Linkedin },
+  { name: "GitHub", href: "https://github.com/iamyashsiwach", icon: Github },
 ];
 
 export function Footer() {
@@ -126,7 +126,7 @@ export function Footer() {
                 </li>
                 <li>
                   <StyledLink 
-                    href="/contact"
+                    href="/Schedule"
                     className="text-neutral-300 hover:text-white transition-colors text-sm block py-1"
                   >
                     Careers
@@ -141,7 +141,7 @@ export function Footer() {
               <ul className="space-y-2">
                 <li>
                   <StyledLink 
-                    href="/contact"
+                    href="/Schedule"
                     className="text-neutral-300 hover:text-white transition-colors text-sm block py-1"
                   >
                     Get Support
@@ -149,7 +149,7 @@ export function Footer() {
                 </li>
                 <li>
                   <StyledLink 
-                    href="/contact"
+                    href="/Schedule"
                     className="text-neutral-300 hover:text-white transition-colors text-sm block py-1"
                   >
                     Request Quote
@@ -196,7 +196,7 @@ export function Footer() {
               })}
             </div>
             <StyledLink 
-              href="/contact"
+              href="/Schedule"
               className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors text-sm"
             >
               Start Your Project
@@ -291,7 +291,7 @@ export function Footer() {
                   Ready to transform your digital presence through our collaborative partnership?
                 </p>
                 <StyledLink 
-                  href="/contact"
+                  href="/Schedule"
                   className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 lg:px-6 py-2.5 lg:py-3 rounded-lg font-medium transition-all duration-300 hover:-translate-y-1 text-sm lg:text-base"
                 >
                   Start Partnership

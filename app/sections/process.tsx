@@ -131,7 +131,7 @@ export function ProcessSection() {
                 Schedule Consultation
               </a>
               <a
-                href="/contact"
+                href="/Schedule"
                 className="px-6 py-3 border border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 rounded-lg font-medium hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"
               >
                 Contact Us
