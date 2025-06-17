@@ -1,20 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Toaster } from "react-hot-toast";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { NextUIProvider } from "@nextui-org/react";
-import QueryProvider from "@/components/providers/QueryProvider";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { cn } from "@/utils/cn";
 import { gotham } from "@/utils/fonts";
 import { longDescription } from "@/utils/config";
 import { ReadOnlyChildren } from "@/utils/types";
-import UIHelpers from "@/components/ui/UIHelpers/UIHelpers";
-// import Navbar from "@/components/ui/Navbar/Navbar";
-import { NavbarDemo } from "@/app/navbar";
-import NavIcons from "@/components/ui/NavIcons/NavIcons";
-import Navigation from "@/components/ui/navigation";
 import "./globals.css";
+import ClientLayout from "./client-layout";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://goonline.site"),
@@ -111,15 +105,7 @@ export default function RootLayout({ children }: ReadOnlyChildren) {
       >
         <ThemeProvider>
           <NextUIProvider>
-            <NavbarDemo />
-            <NavIcons />
-
-            <QueryProvider>{children}</QueryProvider>
-
-            <UIHelpers />
-            <Navigation />
-
-            <Toaster position="top-right" reverseOrder={false} />
+            <ClientLayout>{children}</ClientLayout>
           </NextUIProvider>
         </ThemeProvider>
 

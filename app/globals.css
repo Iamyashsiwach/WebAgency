@@ -87,7 +87,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground transition-colors-400;
+    @apply text-foreground transition-colors-400;
   }
 }
 
@@ -191,16 +191,14 @@
 
 html,
 body {
+  height: auto;
   margin: 0;
   padding: 0;
   overflow: auto;
   overflow-x: hidden;
 }
 
-.container {
-  height: 100vh;
-  overflow: auto;
-}
+/* Removed container scroll styles to prevent double scroll bars */
 
 .fixed-element {
   position: fixed;
@@ -210,7 +208,16 @@ body {
   height: 100%;
   overflow: hidden;
 }
-.full-screen {
-  height: 100vh; /* Full height of the viewport */
-  overflow: hidden; /* Prevents scrolling */
+/* Removed full-screen styles to prevent scroll conflicts */
+
+/* Fix footer spacing */
+footer {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+html,
+body {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
 }
