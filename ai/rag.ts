@@ -92,7 +92,7 @@ export const createRAGChain = async () => {
     
     console.log("Connecting to Pinecone...");
     const pinecone = new Pinecone({ apiKey: pineconeApiKey });
-    const index = pinecone.Index("agency");
+    const index = pinecone.Index("webagency-2");
     
     // Initialize Cohere client for generation
     console.log("Initializing Cohere client for generation...");
