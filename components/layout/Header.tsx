@@ -32,9 +32,10 @@ export function Header() {
         <NavBody>
           <NavbarLogo />
           <NavItems items={navItems} />
-          <div className="flex items-center gap-4"> {/* Reverted: was gap-2 */}
-            <NavbarButton variant="secondary" href="/chatbot">AI Chat & Voice</NavbarButton> {/* Removed compact */}
-            <NavbarButton variant="primary" href="/Schedule">Book a call</NavbarButton> {/* Removed compact */}
+          {/* FIX: Reduced gap and added compact mode for buttons to prevent overlap */}
+          <div className="flex items-center gap-2">
+            <NavbarButton variant="secondary" href="/chatbot" compact>AI Chat & Voice</NavbarButton>
+            <NavbarButton variant="primary" href="/Schedule" compact>Book a call</NavbarButton>
             <ThemeToggle />
           </div>
         </NavBody>
