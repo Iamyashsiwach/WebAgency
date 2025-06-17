@@ -178,6 +178,42 @@
     padding-top: unset !important;
   }
 
+  /* Mobile hero section spacing with gap after navbar */
+  .hero-section-mobile {
+    padding-top: max(7rem, env(safe-area-inset-top, 0px) + 6.5rem) !important; /* Extra mobile phones with gap */
+  }
+
+  @media (min-width: 375px) {
+    .hero-section-mobile {
+      padding-top: max(7.5rem, env(safe-area-inset-top, 0px) + 7rem) !important; /* iPhone SE with gap */
+    }
+  }
+
+  @media (min-width: 414px) {
+    .hero-section-mobile {
+      padding-top: max(8rem, env(safe-area-inset-top, 0px) + 7.5rem) !important; /* iPhone Plus with gap */
+    }
+  }
+
+  @media (min-width: 640px) {
+    .hero-section-mobile {
+      padding-top: max(8.5rem, env(safe-area-inset-top, 0px) + 8rem) !important; /* Large mobile with gap */
+    }
+  }
+
+  @media (min-width: 768px) {
+    .hero-section-mobile {
+      padding-top: 4rem !important; /* Tablet and desktop with gap */
+    }
+  }
+
+  /* Ensure proper gap on small screen heights */
+  @media (max-height: 600px) {
+    .hero-section-mobile {
+      padding-top: max(7rem, 15vh) !important; /* Small screen with visible gap */
+    }
+  }
+
   ::selection {
     background-color: hsl(186 100% 50%);
     color: #000000;
